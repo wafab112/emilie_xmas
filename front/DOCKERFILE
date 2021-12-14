@@ -1,4 +1,11 @@
 FROM ubuntu/apache2:2.4-21.10_beta
+
+COPY apache2/ports.conf /etc/apache2/ports.conf
+COPY apache2/sites-available /etc/apache2/sites-available
+COPY www /var/www/xmas-emilie
+COPY letsencrypt/live/xmas-emilie.de /etc/ssl/certs/live/xmas-emilie.de
+COPY letsencrypt/archive/xmas-emilie.de /etc/ssl/certs/archive/xmas-emilie.de
+
 RUN ["a2enmod", "ssl"]
 RUN ["a2ensite", "xmas-emilie.conf"]
 RUN ["a2dissite", "000-default.conf"]

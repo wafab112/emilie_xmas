@@ -1,18 +1,23 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+
+COPY letsencrypt/live/xmas-emilie.de /etc/ssl/certs/live/xmas-emilie.de
+COPY letsencrypt/archive/xmas-emilie.de /etc/ssl/certs/archive/xmas-emilie.de
+
 WORKDIR /source
 
 COPY *.sln .
-COPY api/*.csproj ./api/
+COPY api/*.csproj ./aspdotnetapp/
 RUN dotnet restore
 
 # copy everything else and build app
-COPY api/. ./api/
-WORKDIR /source/api
+COPY api/. ./aspdotnetapp/
+WORKDIR /source/aspdotnetapp
 RUN dotnet publish -c release -o /app --no-restore
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app ./
-ENTRYPOINT ["dotnet", "api.dll"]
+RUN ls
+ENTRYPOINT ["dotnet", "xmas.dll"]
 

@@ -21,6 +21,7 @@ namespace xmas
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+		    webBuilder.UseUrls("http://*:5152", "https://*:5052");
                 });
     }
 }
