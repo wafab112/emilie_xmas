@@ -1,0 +1,14 @@
+@use "vars" as v;
+@use "sass:map" as map;
+
+@mixin tablet {
+    @media screen and (min-width: map.get(v.$breakpoints, "tablet")) {
+        @content
+    }   
+}
+
+@mixin desktop {
+    @media screen and (min-width: map.get(v.$breakpoints, "desktop")) {
+        @content
+    }   
+}

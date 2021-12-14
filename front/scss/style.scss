@@ -1,0 +1,14 @@
+@use "sass:map" as map;
+
+@use "vars" as v;
+@use "mixins" as m;
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}

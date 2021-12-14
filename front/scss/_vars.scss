@@ -1,0 +1,10 @@
+$_media-bp-medium-bottom: 48rem; // min-width für tablet ~768px
+$_media-bp-large-bottom:  64rem; // min-width für desktop ~1024px
+
+$breakpoints: ("tablet": $_media-bp-medium-bottom, "desktop": $_media-bp-large-bottom);
+
+$_color-blue: #2C5784;
+$_color-red: #800032;
+$_color-white: #FEFCFB;
+
+$colors: ("blue": $_color-blue, "red": $_color-red, "white": $_color-white);
