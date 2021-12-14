@@ -36,6 +36,12 @@ public class MediaController: ControllerBase {
         return (int) Math.Floor(diffDate.TotalDays);
     }
 
+    [HttpGet("TodayNumber")]
+    public IActionResult GetTodayNumber()
+    {
+    	return Ok(TodaysDay());
+    }
+
     [HttpGet("TodayFull")]
     public IActionResult GetTodayFull()
     {
