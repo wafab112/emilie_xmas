@@ -1,0 +1,5 @@
+FROM ubuntu/apache2:2.4-21.10_beta
+RUN ["a2enmod", "ssl"]
+RUN ["a2ensite", "xmas-emilie.conf"]
+RUN ["a2dissite", "000-default.conf"]
+RUN ["apache2ctl", "restart"]

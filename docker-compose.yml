@@ -1,0 +1,51 @@
+version: "3"
+services:
+  frontend:
+    build: 
+      context: ./front/
+      dockerfile: ./front/DOCKERFILE 
+    hostname: xmas21-frontend
+    restart: always
+    volumes:
+      - ${PWD}/front/apache-volume/ports.conf:/etc/apache2/ports.conf
+      - ${PWD}/front/apache-volume/sites-available:/etc/apache2/sites-available
+      - ${PWD}/front/www:/var/www/xmas-emilie
+      - /etc/letsencrypt/live:/etc/ssl/certs/live
+      - /etc/letsencrypt/archive:/etc/ssl/certs/archive
+    networks:
+      - xmas2021-proxy
+      - xmas2021
+
+  api:
+    build:
+      context: ./backend/
+      dockerfile: ./backend/DOCKERFILE
+    hostname: xmas2021-api
+    restart: always
+    volumes:
+      - /etc/letsencrypt/live/xmas-emilie.de:/etc/ssl/certs/live/xmas-emilie.de
+      - /etc/letsencrypt/archive/xmas-emilie.de:/etc/ssl/certs/archive/xmas-emilie.de
+    networks:
+      - xmas2021-proxy
+      - xmas2021
+
+  db:
+    image: postgres
+    hostname: xmas2021-db
+    restart: always
+    environment:
+      - POSTGRES_USER: postgres
+      - POSTGRES_PASSWORD: Start123!
+      - POSTGRES_DB: xmas2021
+    networks:
+      - xmas2021
+
+networks:
+  xmas2021-proxy:
+    external:
+      name: proxy_xmas2021
+  xmas2021:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6 = "true"
+
