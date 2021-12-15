@@ -39,9 +39,9 @@ async function digestMessage(message: string) {
     return hashHex;
 }
 
-function requestLogin(userName: string, password: string, loading: LoadingElement): LoginResult 
+async function requestLogin(userName: string, password: string, loading: LoadingElement): Promise<string>
 {
-    var promise = new Promise(async (resolve, reject) => {
+    var promise = new Promise<string>(async (resolve, reject) => {
         var xhr = new XMLHttpRequest();
 
         xhr.onreadystatechange = () => {
@@ -60,7 +60,7 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
                 }
                 else
                 {
-                    reject(xhr.status);
+                    reject(xhr.status.toString());
                 }
             }
         }
@@ -72,25 +72,7 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
         xhr.send();
     });
 
-    var returnVal: LoginResult;
-
-    promise.then((token: string) => {
-        returnVal = {
-            Token: token,
-            ResponseCode: 200
-        };
-        
-        loading.changeState(LoadingState.Success);
-    }).catch((status: number) => {
-        returnVal = {
-            Token: "",
-            ResponseCode: status
-        };
-
-        loading.changeState(LoadingState.Failed);
-    }); 
-
-    return returnVal;
+    return promise;
 }
 
 // EventListener für Login
@@ -164,12 +146,16 @@ function tryLogin(event: Event)
             }
         }
     }; 
+    
+    var promise = requestLogin(userNameDiv.value, passwordDiv.value, loading);
+    promise.then((token: string) => {
+        authToken = token;
+        saveAuthToken(token);
+        window.location.href = url; 
 
-    var loginResult = requestLogin(userNameDiv.value, passwordDiv.value, loading);
-    if (loginResult.ResponseCode === 200)
-    {
-        authToken = loginResult.Token;
-        saveAuthToken(loginResult.Token);
-    //    window.location.href = url; 
-    }
+        loading.changeState(LoadingState.Success);
+    }).catch((status: string) => {
+        console.log(status);
+        loading.changeState(LoadingState.Failed);
+    }); 
 }

@@ -30,44 +30,32 @@ function digestMessage(message) {
     });
 }
 function requestLogin(userName, password, loading) {
-    var promise = new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 1) {
-                console.log("loading");
-                loading.changeState(LoadingState.Loading);
-            }
-            else if (xhr.readyState === 4) {
-                console.log("fertig");
-                if (xhr.status === 200) {
-                    var token = xhr.response;
-                    resolve(token);
+    return __awaiter(this, void 0, void 0, function* () {
+        var promise = new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 1) {
+                    console.log("loading");
+                    loading.changeState(LoadingState.Loading);
                 }
-                else {
-                    reject(xhr.status);
+                else if (xhr.readyState === 4) {
+                    console.log("fertig");
+                    if (xhr.status === 200) {
+                        var token = xhr.response;
+                        resolve(token);
+                    }
+                    else {
+                        reject(xhr.status.toString());
+                    }
                 }
-            }
-        };
-        var query = apiUrl + `Authentication/login?UserName=${userName}&Password=${yield digestMessage(password)}`;
-        console.log(query);
-        xhr.open("POST", query);
-        xhr.send();
-    }));
-    var returnVal;
-    promise.then((token) => {
-        returnVal = {
-            Token: token,
-            ResponseCode: 200
-        };
-        loading.changeState(LoadingState.Success);
-    }).catch((status) => {
-        returnVal = {
-            Token: "",
-            ResponseCode: status
-        };
-        loading.changeState(LoadingState.Failed);
+            };
+            var query = apiUrl + `Authentication/login?UserName=${userName}&Password=${yield digestMessage(password)}`;
+            console.log(query);
+            xhr.open("POST", query);
+            xhr.send();
+        }));
+        return promise;
     });
-    return returnVal;
 }
 function tryLogin(event) {
     event.preventDefault();
@@ -125,10 +113,15 @@ function tryLogin(event) {
             }
         }
     };
-    var loginResult = requestLogin(userNameDiv.value, passwordDiv.value, loading);
-    if (loginResult.ResponseCode === 200) {
-        authToken = loginResult.Token;
-        saveAuthToken(loginResult.Token);
-    }
+    var promise = requestLogin(userNameDiv.value, passwordDiv.value, loading);
+    promise.then((token) => {
+        authToken = token;
+        saveAuthToken(token);
+        window.location.href = url;
+        loading.changeState(LoadingState.Success);
+    }).catch((status) => {
+        console.log(status);
+        loading.changeState(LoadingState.Failed);
+    });
 }
 //# sourceMappingURL=login.js.map
