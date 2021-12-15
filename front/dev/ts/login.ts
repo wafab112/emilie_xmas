@@ -52,10 +52,12 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 1)
             {
+                console.log("loading");
                 loading.changeState(LoadingState.Loading);
             }
             else if (xhr.readyState === 4)
             {
+                console.log("fertig");
                 if (xhr.status === 200)
                 {
                     var json = xhr.response;
@@ -69,7 +71,10 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
             }
         }
 
-        xhr.open("POST", apiUrl + `Authentication/login?UserName=${userName}&Password=${digestMessage(password)}`);
+        var query = apiUrl + `Authentication/login?UserName=${userName}&Password=${digestMessage(password)}`;
+        console.log(query);
+
+        xhr.open("POST", query);
         xhr.send();
     });
 
