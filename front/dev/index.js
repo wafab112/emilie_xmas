@@ -1,4 +1,4 @@
-var apiUrl = "https://api.xmas-emilie.de/;;
+var apiUrl = "https://api.xmas-emilie.de/;
 var authToken = "";
 function readInputFileAsBase64String(input, callback) {
     var reader = new FileReader();

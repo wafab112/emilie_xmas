@@ -13,6 +13,6 @@ cp -r /etc/letsencrypt/live/xmas-emilie.de/* /opt/emilie_xmas/backend/letsencryp
 cp -r /etc/letsencrypt/archive/xmas-emilie.de/* /opt/emilie_xmas/backend/letsencrypt/archive/xmas-emilie.de/
 
 # ToDo
-cp -r /opt/emilie_xmas/front/dev/ /opt/emilie_xmas/front/www/
+cp -r /opt/emilie_xmas/front/dev/* /opt/emilie_xmas/front/www
 
 docker-compose up -d
