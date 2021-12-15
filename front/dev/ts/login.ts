@@ -71,7 +71,7 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
             }
         }
 
-        var query = apiUrl + `Authentication/login?UserName=${userName}&Password=${digestMessage(password)}`;
+        var query = apiUrl + `Authentication/login?UserName=${userName}&Password=${await digestMessage(password)}`;
         console.log(query);
 
         xhr.open("POST", query);

@@ -51,7 +51,7 @@ function requestLogin(userName, password, loading) {
                 }
             }
         };
-        var query = apiUrl + `Authentication/login?UserName=${userName}&Password=${digestMessage(password)}`;
+        var query = apiUrl + `Authentication/login?UserName=${userName}&Password=${yield digestMessage(password)}`;
         console.log(query);
         xhr.open("POST", query);
         xhr.send();
