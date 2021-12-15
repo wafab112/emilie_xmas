@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     ssh_cmd(client, "cd /opt/emilie_xmas; git pull", "pulling repo")
 
-    ssh_cmd(client, "docker-compose down", "stopping previous stack")
+    ssh_cmd(client, "cd /opt/emilie_xmas; docker-compose down", "stopping previous stack")
     if True:
         print_color("y", "### removing api image")
         ssh_cmd(client, "docker rmi emilie_xmas_xmas2021-api", doRead=True)
