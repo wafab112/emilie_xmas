@@ -7,9 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-class LoginResponse {
-}
-class LoginResult extends LoginResponse {
+class LoginResult {
 }
 var LoadingState;
 (function (LoadingState) {
@@ -42,9 +40,8 @@ function requestLogin(userName, password, loading) {
             else if (xhr.readyState === 4) {
                 console.log("fertig");
                 if (xhr.status === 200) {
-                    var json = xhr.response;
-                    var response = JSON.parse(json);
-                    resolve(response);
+                    var token = xhr.response;
+                    resolve(token);
                 }
                 else {
                     reject(xhr.status);
@@ -57,17 +54,15 @@ function requestLogin(userName, password, loading) {
         xhr.send();
     }));
     var returnVal;
-    promise.then((response) => {
+    promise.then((token) => {
         returnVal = {
-            Token: response.Token,
-            Succeeded: response.Succeeded,
+            Token: token,
             ResponseCode: 200
         };
         loading.changeState(LoadingState.Success);
     }).catch((status) => {
         returnVal = {
             Token: "",
-            Succeeded: false,
             ResponseCode: status
         };
         loading.changeState(LoadingState.Failed);
@@ -131,7 +126,7 @@ function tryLogin(event) {
         }
     };
     var loginResult = requestLogin(userNameDiv.value, passwordDiv.value, loading);
-    if (loginResult.Succeeded) {
+    if (loginResult.ResponseCode === 200) {
         authToken = loginResult.Token;
         saveAuthToken(loginResult.Token);
     }

@@ -1,11 +1,6 @@
-class LoginResponse
+class LoginResult
 {
     Token: string;
-    Succeeded: boolean;
-}
-
-class LoginResult extends LoginResponse
-{
     ResponseCode: number; 
 }
 
@@ -44,7 +39,7 @@ async function digestMessage(message: string) {
     return hashHex;
 }
 
-function requestLogin(userName: string, password: string, loading: LoadingElement): LoginResponse 
+function requestLogin(userName: string, password: string, loading: LoadingElement): LoginResult 
 {
     var promise = new Promise(async (resolve, reject) => {
         var xhr = new XMLHttpRequest();
@@ -60,9 +55,8 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
                 console.log("fertig");
                 if (xhr.status === 200)
                 {
-                    var json = xhr.response;
-                    var response: LoginResponse = JSON.parse(json);
-                    resolve(response);
+                    var token = xhr.response;
+                    resolve(token);
                 }
                 else
                 {
@@ -80,10 +74,9 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
 
     var returnVal: LoginResult;
 
-    promise.then((response: LoginResponse) => {
+    promise.then((token: string) => {
         returnVal = {
-            Token: response.Token,
-            Succeeded: response.Succeeded,
+            Token: token,
             ResponseCode: 200
         };
         
@@ -91,7 +84,6 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
     }).catch((status: number) => {
         returnVal = {
             Token: "",
-            Succeeded: false,
             ResponseCode: status
         };
 
@@ -174,7 +166,7 @@ function tryLogin(event: Event)
     }; 
 
     var loginResult = requestLogin(userNameDiv.value, passwordDiv.value, loading);
-    if (loginResult.Succeeded)
+    if (loginResult.ResponseCode === 200)
     {
         authToken = loginResult.Token;
         saveAuthToken(loginResult.Token);
