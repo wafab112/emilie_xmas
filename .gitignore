@@ -460,3 +460,5 @@ $RECYCLE.BIN/
 front/www/
 
 letsencrypt/
+
+server-deploy.*
