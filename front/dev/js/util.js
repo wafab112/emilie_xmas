@@ -53,10 +53,10 @@ function checkSavedTokenValidity() {
     return checkTokenExpiration(token);
 }
 document.addEventListener("DOMContentLoaded", () => {
-    if (window.location.href !== `${url}login`) {
+    if (!window.location.href.startsWith(`${url}login`)) {
         var isTokenValid = checkSavedTokenValidity();
         if (!isTokenValid) {
-            window.location.href = `${url}login`;
+            window.location.href = `${url}login.html`;
         }
     }
 });

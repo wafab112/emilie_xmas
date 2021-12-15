@@ -72,7 +72,8 @@ function requestLogin(userName, password, loading) {
 }
 function tryLogin(event) {
     event.preventDefault();
-    var form = event.target;
+    var submitButton = event.target;
+    var form = submitButton.parentElement;
     var userNameDiv = form.querySelector(":scope > #userName");
     var passwordDiv = form.querySelector(":scope > #password");
     var loadingDiv = form.querySelector(":scope > .loading");
@@ -129,7 +130,6 @@ function tryLogin(event) {
     if (loginResult.Succeeded) {
         authToken = loginResult.Token;
         saveAuthToken(loginResult.Token);
-        window.location.href = url;
     }
 }
 //# sourceMappingURL=login.js.map
