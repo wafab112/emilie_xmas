@@ -32,7 +32,7 @@ function digestMessage(message) {
     });
 }
 function requestLogin(userName, password, loading) {
-    var promise = new Promise((resolve, reject) => {
+    var promise = new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 1) {
@@ -55,7 +55,7 @@ function requestLogin(userName, password, loading) {
         console.log(query);
         xhr.open("POST", query);
         xhr.send();
-    });
+    }));
     var returnVal;
     promise.then((response) => {
         returnVal = {

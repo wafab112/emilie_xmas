@@ -46,7 +46,7 @@ async function digestMessage(message: string) {
 
 function requestLogin(userName: string, password: string, loading: LoadingElement): LoginResponse 
 {
-    var promise = new Promise((resolve, reject) => {
+    var promise = new Promise(async (resolve, reject) => {
         var xhr = new XMLHttpRequest();
 
         xhr.onreadystatechange = () => {
