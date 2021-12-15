@@ -36,9 +36,11 @@ function requestLogin(userName, password, loading) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 1) {
+                console.log("loading");
                 loading.changeState(LoadingState.Loading);
             }
             else if (xhr.readyState === 4) {
+                console.log("fertig");
                 if (xhr.status === 200) {
                     var json = xhr.response;
                     var response = JSON.parse(json);
@@ -49,7 +51,9 @@ function requestLogin(userName, password, loading) {
                 }
             }
         };
-        xhr.open("POST", apiUrl + `Authentication/login?UserName=${userName}&Password=${digestMessage(password)}`);
+        var query = apiUrl + `Authentication/login?UserName=${userName}&Password=${digestMessage(password)}`;
+        console.log(query);
+        xhr.open("POST", query);
         xhr.send();
     });
     var returnVal;
