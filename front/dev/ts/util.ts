@@ -1,4 +1,5 @@
-let apiUrl = "https://api.xmas-emilie.de/;
+let url = "https://xmas-emilie.de/";
+let apiUrl = "https://api.xmas-emilie.de/";
 var authToken = "";
 
 function saveAuthToken(token: string)
@@ -13,7 +14,7 @@ function loadAuthToken(): string
 }
 
 // Only checks if token is authenticated
-function checkTokenValidity(token: string): boolean
+function checkTokenAuthentication(token: string): boolean
 {
     var promise = new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
@@ -37,7 +38,51 @@ function checkTokenValidity(token: string): boolean
         }
 
         xhr.open("GET", apiUrl + "Media/TodayNumber");
-        xhr.setRequestHeader("Authorization" "Bearer " + token);
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
         xhr.send();
     });
+
+    var returnVal: boolean;
+
+    promise.then(function(authenticationWorked: boolean)
+    {
+        returnVal = authenticationWorked;
+    }).catch(function(status: number)
+    {
+        // ToDo
+        console.log(status);
+        returnVal = false;
+    });;
+
+    return returnVal;
 }
+
+function checkTokenExpiration(token: string)
+{
+    var splitToken = token.split(".");
+    var payloadBase64 = splitToken[1];
+    var payload = atob(payloadBase64);
+    var jsonObject = JSON.parse(payload);
+    var expiration: number = jsonObject.exp;
+
+    return Date.now() >= expiration * 1000;
+}
+
+function checkSavedTokenValidity()
+{
+    var token = loadAuthToken();
+    if (token === null || token === undefined || token === "") return false;
+    return checkTokenExpiration(token);
+}
+
+// Event Listeners
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.href !== `${url}login`)
+        {
+        var isTokenValid = checkSavedTokenValidity();
+        if (!isTokenValid)
+        {
+            window.location.href = `${url}login`
+        }
+    }
+});
