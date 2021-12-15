@@ -44,7 +44,7 @@ function checkTokenExpiration(token) {
     var payload = atob(payloadBase64);
     var jsonObject = JSON.parse(payload);
     var expiration = jsonObject.exp;
-    return Date.now() >= expiration * 1000;
+    return Date.now() < expiration * 1000;
 }
 function checkSavedTokenValidity() {
     var token = loadAuthToken();

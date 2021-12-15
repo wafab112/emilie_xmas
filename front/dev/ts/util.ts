@@ -65,7 +65,7 @@ function checkTokenExpiration(token: string)
     var jsonObject = JSON.parse(payload);
     var expiration: number = jsonObject.exp;
 
-    return Date.now() >= expiration * 1000;
+    return Date.now() < expiration * 1000;
 }
 
 function checkSavedTokenValidity()
