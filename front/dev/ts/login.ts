@@ -100,7 +100,8 @@ function requestLogin(userName: string, password: string, loading: LoadingElemen
 function tryLogin(event: Event)
 {
     event.preventDefault();
-    var form = event.target as HTMLFormElement;
+    var submitButton = event.target as HTMLElement;
+    var form = submitButton.parentElement as HTMLFormElement;
     var userNameDiv = form.querySelector(":scope > #userName") as HTMLInputElement;
     var passwordDiv = form.querySelector(":scope > #password") as HTMLInputElement;
     var loadingDiv = form.querySelector(":scope > .loading") as HTMLElement;

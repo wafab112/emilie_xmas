@@ -54,9 +54,9 @@ if __name__ == "__main__":
     client.connect("173.249.26.235", username="fabian")
     print_color("g", "... done")
 
-    ssh_cmd(client, "cd /opt/emilie_xmas; git pull", "pulling repo")
+    ssh_cmd(client, "cd /opt/emilie_xmas; git pull", "pulling repo", doRead=True)
 
-    ssh_cmd(client, "cd /opt/emilie_xmas; docker-compose down", "stopping previous stack")
+    ssh_cmd(client, "cd /opt/emilie_xmas; docker-compose down", "stopping previous stack", doRead=True)
     if True:
         print_color("y", "### removing api image")
         ssh_cmd(client, "docker rmi emilie_xmas_xmas2021-api", doRead=True)

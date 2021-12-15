@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         var isTokenValid = checkSavedTokenValidity();
         if (!isTokenValid)
         {
-            window.location.href = `${url}login`
+            window.location.href = `${url}login.html`
         }
     }
 });
