@@ -456,9 +456,11 @@ $RECYCLE.BIN/
 .DS_Store
 
 *.swp
+*~
 
 front/www/
 
 letsencrypt/
 
-server-deploy.*
+node_modules/
+package*
