@@ -26,7 +26,7 @@ function digestMessage(message) {
         const hashBuffer = yield crypto.subtle.digest('SHA-256', msgUint8);
         const hashArray = Array.from(new Uint8Array(hashBuffer));
         const hashHex = hashArray.map(function (x) {
-            return x.toString(16).padStart(2, '0');
+            return x.toString(16).padStart(2, '0').toUpperCase();
         }).join('');
         return hashHex;
     });

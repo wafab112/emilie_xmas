@@ -37,7 +37,7 @@ async function digestMessage(message: string) {
     const hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
     const hashHex: string = hashArray.map(function(x: number)
     {
-        return x.toString(16).padStart(2, '0');
+        return x.toString(16).padStart(2, '0').toUpperCase();
     }).join(''); // convert bytes to hex string
 
 
