@@ -173,6 +173,6 @@ function tryLogin(event: Event)
     {
         authToken = loginResult.Token;
         saveAuthToken(loginResult.Token);
-        window.location.href = url; 
+    //    window.location.href = url; 
     }
 }

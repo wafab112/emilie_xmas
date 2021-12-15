@@ -77,8 +77,8 @@ function checkSavedTokenValidity()
 
 // Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
-    if (window.location.href !== `${url}login`)
-        {
+    if (!window.location.href.startsWith(`${url}login`))
+    {
         var isTokenValid = checkSavedTokenValidity();
         if (!isTokenValid)
         {
