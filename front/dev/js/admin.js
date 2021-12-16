@@ -80,6 +80,7 @@ function tryChangeImage(event) {
     uploadOneImage(authToken, dayIn.valueAsNumber, thumbnailIn, true);
 }
 function tryGetDay(event) {
+    event.preventDefault();
     var day = event.target.parentElement.querySelector(":scope > #day").valueAsNumber;
     var dayP = document.querySelector("#fullDay");
     var query = `${apiUrl}Admin/Media/Full?day=${day}`;
