@@ -90,12 +90,8 @@ function tryGetDay(event) {
             dayP.innerHTML = "Loading...";
         }
         else if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                dayP.innerHTML = xhr.response;
-            }
-            else {
-                dayP.innerHTML = xhr.statusText;
-            }
+            dayP.innerHTML = xhr.response;
+            dayP.innerHTML = xhr.statusText;
         }
     };
     xhr.open("GET", query);
