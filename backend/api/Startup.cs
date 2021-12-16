@@ -102,7 +102,9 @@ namespace xmas
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("https://xmas-emilie.de", "https://www.xmas-emilie.de");
+                    builder.WithOrigins("https://xmas-emilie.de", "https://www.xmas-emilie.de")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
                 });
             });
         }
