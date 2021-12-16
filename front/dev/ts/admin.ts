@@ -47,11 +47,11 @@ function uploadOneImage(token: string, day: number, input: HTMLInputElement, isT
         var message = `{"day": ${day}, `;
         if (isThumbnail)
         {
-            message = message + `"image": null, "thumbnail": "${fileBase64String}"}`;
+            message = message + `"image": "", "thumbnail": "${fileBase64String}"}`;
         }
         else
         {
-            message = message + `"image": "${fileBase64String}", "thumbnail": null}`;
+            message = message + `"image": "${fileBase64String}", "thumbnail": ""}`;
         }
 
         upload("POST", apiUrl + "Admin/ChangeImage", token, "application/json", message)

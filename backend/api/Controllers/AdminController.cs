@@ -50,7 +50,7 @@ public class AdminController : ControllerBase {
     public async Task<IActionResult> PostInfo([FromBody] InitModel model)
     {
         var result = await _mediaService.ChangeDayInfo(model);
-        return Ok("Not Implemented");
+        return Ok(result);
     }
 
     [HttpPost("ChangeImage")]
