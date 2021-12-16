@@ -18,10 +18,10 @@ function readInputFileAsBase64String(input: HTMLInputElement, callback: IFileRea
 
 function initDay(token: string, day: number, title: string, description: string)
 {
-    if (title === null || title === undefined || title === "") title = "null";
+    if (title === null || title === undefined || title === "") title = "";
     else title = "\"" + title + "\"";
 
-    if (description === null || description === undefined || description === "") description = "null";
+    if (description === null || description === undefined || description === "") description = "";
     else description = "\"" + description + "\"";
 
     var message = `{"Day": ${day}, "Title": ${title}, "InnerHTML": ${description}}`;

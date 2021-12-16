@@ -10,11 +10,11 @@ function readInputFileAsBase64String(input, callback) {
 }
 function initDay(token, day, title, description) {
     if (title === null || title === undefined || title === "")
-        title = "null";
+        title = "";
     else
         title = "\"" + title + "\"";
     if (description === null || description === undefined || description === "")
-        description = "null";
+        description = "";
     else
         description = "\"" + description + "\"";
     var message = `{"Day": ${day}, "Title": ${title}, "InnerHTML": ${description}}`;
