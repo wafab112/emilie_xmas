@@ -120,6 +120,8 @@ function tryChangeImage(event: Event)
 
 function tryGetDay(event: Event)
 {
+    event.preventDefault();
+
     var day = ((event.target as HTMLElement).parentElement.querySelector(":scope > #day") as HTMLInputElement).valueAsNumber;
     var dayP = document.querySelector("#fullDay") as HTMLElement;
     
