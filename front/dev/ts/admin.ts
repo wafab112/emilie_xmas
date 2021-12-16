@@ -30,7 +30,13 @@ function initDay(token: string, day: number, title: string, description: string)
 
 function changeInfo(token: string, day: number, title: string, description: string)
 {
-    var message = `{"Day": ${day}, "Title": ${title ?? "null"}, "InnerHTML": ${description ?? "null"}}`;
+    if (title === null || title === undefined || title === "") title = "\"\"";
+    else title = "\"" + title + "\"";
+
+    if (description === null || description === undefined || description === "") description = "\"\"";
+    else description = "\"" + description + "\"";
+
+    var message = `{"Day": ${day}, "Title": ${title}, "InnerHTML": ${description}}`;
     upload("POST", apiUrl + "Admin/ChangeInfo", token, "application/json", message);
 }
 

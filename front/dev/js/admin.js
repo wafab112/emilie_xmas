@@ -21,7 +21,15 @@ function initDay(token, day, title, description) {
     upload("POST", apiUrl + "Admin/Init", token, "application/json", message);
 }
 function changeInfo(token, day, title, description) {
-    var message = `{"Day": ${day}, "Title": ${title !== null && title !== void 0 ? title : "null"}, "InnerHTML": ${description !== null && description !== void 0 ? description : "null"}}`;
+    if (title === null || title === undefined || title === "")
+        title = "\"\"";
+    else
+        title = "\"" + title + "\"";
+    if (description === null || description === undefined || description === "")
+        description = "\"\"";
+    else
+        description = "\"" + description + "\"";
+    var message = `{"Day": ${day}, "Title": ${title}, "InnerHTML": ${description}}`;
     upload("POST", apiUrl + "Admin/ChangeInfo", token, "application/json", message);
 }
 function uploadOneImage(token, day, input, isThumbnail) {
