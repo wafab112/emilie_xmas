@@ -13,8 +13,8 @@ using xmas.Data;
 namespace xmas.Migrations
 {
     [DbContext(typeof(ApiContext))]
-    [Migration("20211208090723_unique-day")]
-    partial class uniqueday
+    [Migration("20211216110453_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,8 +33,8 @@ namespace xmas.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
 
                     b.Property<int>("Day")
                         .HasColumnType("integer");
@@ -45,7 +45,7 @@ namespace xmas.Migrations
                     b.Property<string>("InnerHTML")
                         .HasColumnType("text");
 
-                    b.Property<List<byte>>("Thubnail")
+                    b.Property<List<byte>>("Thumbnail")
                         .HasColumnType("smallint[]");
 
                     b.Property<string>("Title")

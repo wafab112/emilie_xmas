@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -17,15 +18,22 @@ namespace xmas.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Day = table.Column<int>(type: "integer", nullable: false),
+                    Date = table.Column<DateOnly>(type: "date", nullable: false),
                     Title = table.Column<string>(type: "text", nullable: true),
                     InnerHTML = table.Column<string>(type: "text", nullable: true),
                     Image = table.Column<List<byte>>(type: "smallint[]", nullable: true),
-                    Thubnail = table.Column<List<byte>>(type: "smallint[]", nullable: true)
+                    Thumbnail = table.Column<List<byte>>(type: "smallint[]", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Calendar", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Calendar_Day",
+                table: "Calendar",
+                column: "Day",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
