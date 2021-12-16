@@ -1,7 +1,7 @@
 import argparse;
 import paramiko;
 
-escape = chr(27)
+escape = "`e" 
 cyan = "[36m"
 green = "[32m"
 red = "[31m"
