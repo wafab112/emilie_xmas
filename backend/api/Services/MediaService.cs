@@ -64,8 +64,6 @@ public class MediaService
 
     public async Task<UploadResult> ChangeDayInfo(InitModel model)
     {
-        return UploadResult.Failed; 
-
         try
         {
             var entry = _context.Calendar.First(x => x.Day == model.Day);

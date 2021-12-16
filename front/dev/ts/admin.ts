@@ -148,7 +148,7 @@ function tryGetDay(event: Event)
         }
         else if (xhr.readyState === 4)
         {
-            dayP.innerHTML = xhr.response;
+            dayP.innerHTML = xhr.responseText;
             dayP.innerHTML = xhr.statusText;
         }
     };
