@@ -16,7 +16,7 @@ cp -r -a /opt/emilie_xmas/front/dev/. /opt/emilie_xmas/front/www
 
 export DOTNET_ROOT="$HOME/.dotnet"
 export PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH"
-cd /opt/emilie_xmas/backend/api; dotnet-ef database update
+cd /opt/emilie_xmas/backend/api; dotnet-ef database update --verbose
 
 cd /opt/emilie_xmas/backend; docker-compose up -d
 cd /opt/emilie_xmas/front; docker-compose up -d
