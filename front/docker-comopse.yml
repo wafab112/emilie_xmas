@@ -5,8 +5,6 @@ services:
       context: .
       dockerfile: ./DOCKERFILE 
     restart: always
-    depends_on:
-      - "xmas2021-db"
     networks:
       - xmas2021-proxy
       - xmas2021
