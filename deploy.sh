@@ -14,7 +14,7 @@ cp -r /etc/letsencrypt/archive/xmas-emilie.de/* /opt/emilie_xmas/backend/letsenc
 # ToDo
 cp -r -a /opt/emilie_xmas/front/dev/. /opt/emilie_xmas/front/www
 
-cd backend/api; dotnet ef database update
+cd /opt/emilie_xmas/backend/api; dotnet ef database update
 
-cd backend; docker-compose up -d
-cd front; docker-compose up -d
+cd /opt/emilie_xmas/backend; docker-compose up -d
+cd /opt/emilie_xmas/front; docker-compose up -d
