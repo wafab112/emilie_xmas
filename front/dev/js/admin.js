@@ -10,7 +10,7 @@ function readInputFileAsBase64String(input, callback) {
 }
 function initDay(token, day, title, description) {
     if (title === null || title === undefined || title === "")
-        title = "";
+        title = "\"\"";
     else
         title = "\"" + title + "\"";
     if (description === null || description === undefined || description === "")
