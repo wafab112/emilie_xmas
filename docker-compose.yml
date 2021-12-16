@@ -16,6 +16,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Start123!
       POSTGRES_DB: xmas2021
+    ports:
+      - 5432:5432
     networks:
       - xmas2021
 

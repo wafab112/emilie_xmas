@@ -1,8 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
-RUN dotnet tool install --global dotnet-ef
-ENV PATH="$PATH:/root/.dotnet/tools"
-
 COPY letsencrypt/live/xmas-emilie.de /etc/ssl/certs/live/xmas-emilie.de
 COPY letsencrypt/archive/xmas-emilie.de /etc/ssl/certs/archive/xmas-emilie.de
 
@@ -15,7 +12,6 @@ RUN dotnet restore
 # copy everything else and build app
 COPY api/. ./aspdotnetapp/
 WORKDIR /source/aspdotnetapp
-RUN dotnet-ef database update
 RUN dotnet publish -c release -o /app --no-restore
 
 # final stage/image
