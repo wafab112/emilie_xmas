@@ -16,11 +16,11 @@ RUN dotnet restore
 COPY api/. ./aspdotnetapp/
 WORKDIR /source/aspdotnetapp
 RUN dotnet publish -c release -o /app --no-restore
-RUN dotnet-ef database update
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app ./
+RUN dotnet-ef database update
 ENTRYPOINT ["dotnet", "xmas.dll"]
 
