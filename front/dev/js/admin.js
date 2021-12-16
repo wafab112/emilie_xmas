@@ -14,7 +14,7 @@ function initDay(token, day, title, description) {
     else
         title = "\"" + title + "\"";
     if (description === null || description === undefined || description === "")
-        description = "";
+        description = "\"\"";
     else
         description = "\"" + description + "\"";
     var message = `{"Day": ${day}, "Title": ${title}, "InnerHTML": ${description}}`;
