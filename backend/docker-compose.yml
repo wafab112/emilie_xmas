@@ -1,0 +1,20 @@
+version: "3"
+services:
+  xmas2021-api:
+    build:
+      context: .
+      dockerfile: ./DOCKERFILE
+    restart: always
+    depends_on:
+      - "xmas2021-db"
+    networks:
+      - xmas2021-proxy
+      - xmas2021
+
+networks:
+  xmas2021-proxy:
+    external:
+      name: proxy_xmas2021
+  xmas2021:
+    external:
+      name: emilie_xmas_xmas2021 
