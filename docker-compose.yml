@@ -9,15 +9,6 @@ services:
       - xmas2021-proxy
       - xmas2021
 
-  xmas2021-api:
-    build:
-      context: ./backend/
-      dockerfile: ./DOCKERFILE
-    restart: always
-    networks:
-      - xmas2021-proxy
-      - xmas2021
-
   xmas2021-db:
     image: postgres
     restart: always
@@ -26,6 +17,15 @@ services:
       POSTGRES_PASSWORD: Start123!
       POSTGRES_DB: xmas2021
     networks:
+      - xmas2021
+
+  xmas2021-api:
+    build:
+      context: ./backend/
+      dockerfile: ./DOCKERFILE
+    restart: always
+    networks:
+      - xmas2021-proxy
       - xmas2021
 
 networks:
