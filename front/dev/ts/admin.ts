@@ -149,5 +149,5 @@ function tryGetDay(event: Event)
 
     xhr.open("GET", query);
     xhr.setRequestHeader("Authorization", "Bearer " + authToken);
-    xhr.send();
+    xhr.send("test");
 }

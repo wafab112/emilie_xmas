@@ -100,6 +100,6 @@ function tryGetDay(event) {
     };
     xhr.open("GET", query);
     xhr.setRequestHeader("Authorization", "Bearer " + authToken);
-    xhr.send();
+    xhr.send("test");
 }
 //# sourceMappingURL=admin.js.map
