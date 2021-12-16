@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         var isTokenValid = checkSavedTokenValidity();
         if (!isTokenValid)
         {
+            window.localStorage.removeItem("authToken");
             window.location.href = `${url}login.html`
         }
     }

@@ -1,3 +1,6 @@
+const dayZero = 1640304000000;
+const dayMillis = 86400000; 
+
 interface IFileReaderResultFunction
 {
     (fileBase64String: string) : void;
@@ -58,4 +61,91 @@ function upload(method: string, url: string, token:string, contentType: string, 
     xhr.setRequestHeader("Authorization", "Bearer " + token);
     xhr.setRequestHeader("Content-Type", contentType);
     xhr.send(message);
+}
+
+function getDaysTimeString(day: number): string
+{
+    var dayInMs = dayZero + day * dayMillis;
+    var date = new Date(dayInMs);
+    return date.toUTCString();
+}
+
+function printDate(event: Event)
+{
+    var input = event.target as HTMLInputElement;
+    var form = input.parentElement;
+    var dateP = form.querySelector(":scope > #date") as HTMLElement;
+    dateP.innerHTML = getDaysTimeString(input.valueAsNumber);
+}
+
+function tryInit(event: Event)
+{
+    event.preventDefault();    
+
+    var btn = event.target as HTMLInputElement;
+    var form = btn.parentElement;
+    var dayIn = form.querySelector(":scope > #day") as HTMLInputElement;
+    var titleIn = form.querySelector(":scope > #title") as HTMLInputElement;
+    var descrIn = form.querySelector(":scope > #innerHTML") as HTMLInputElement;
+
+    initDay(authToken, dayIn.valueAsNumber, titleIn.value, descrIn.value);
+}
+
+function tryChangeInfo(event: Event)
+{
+    event.preventDefault();    
+
+    var btn = event.target as HTMLInputElement;
+    var form = btn.parentElement;
+    var dayIn = form.querySelector(":scope > #day") as HTMLInputElement;
+    var titleIn = form.querySelector(":scope > #title") as HTMLInputElement;
+    var descrIn = form.querySelector(":scope > #innerHTML") as HTMLInputElement;
+
+    changeInfo(authToken, dayIn.valueAsNumber, titleIn.value, descrIn.value);
+}
+
+function tryChangeImage(event: Event)
+{
+    event.preventDefault();    
+     
+    var btn = event.target as HTMLInputElement;
+    var form = btn.parentElement;
+    var dayIn = form.querySelector(":scope > #day") as HTMLInputElement;
+    var imageIn = form.querySelector(":scope > #image") as HTMLInputElement;
+    var thumbnailIn = form.querySelector(":scope > #thumbnail") as HTMLInputElement;
+
+    uploadOneImage(authToken, dayIn.valueAsNumber, imageIn, false);
+    uploadOneImage(authToken, dayIn.valueAsNumber, thumbnailIn, true);
+}
+
+function tryGetDay(event: Event)
+{
+    var day = ((event.target as HTMLElement).parentElement.querySelector(":scope > #day") as HTMLInputElement).valueAsNumber;
+    var dayP = document.querySelector("#fullDay") as HTMLElement;
+    
+    var query = `${apiUrl}Admin/Media/Full?day=${day}`
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState === 1)
+        {
+            dayP.innerHTML = "Loading...";
+        }
+        else if (xhr.readyState === 4)
+        {
+            if (xhr.status === 200)
+            {
+                dayP.innerHTML = xhr.response;
+            }    
+            else
+            {
+                dayP.innerHTML = xhr.statusText;
+            }
+        }
+    };
+
+    xhr.open("GET", query);
+    xhr.setRequestHeader("Authorization", "Bearer " + authToken);
+    xhr.send();
 }

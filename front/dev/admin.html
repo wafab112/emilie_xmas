@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Tools</title>
+    
+    <link rel="stylesheet" href="css/style.css" media="all">
+
+    <script src="js/util.js"></script>
+    <script src="js/admin.js"></script>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a class="menu__back" href="#">
+            </a>
+            <!-- TODO: onclick -->
+            <button class="menu__open">
+            </button>
+        </div>
+
+        <nav>
+
+        </nav>
+    </header>
+
+    <main>
+        <form id="admin">
+            <input id="day" type="number" placeholder="0" onchange="printDate(event)"/>
+            <p id="date"></p>
+            <button onlclick="tryGetDay(event)">FullDay</button>
+            <p id="fullDay"></p>
+
+            <input id="title" type="text" placeholder="text" />
+            <textarea id="innerHTML" placeholder="Beschreibung" /> 
+            <button onclick="tryInit(event)">Init</button>
+            <button onclick="tryChangeInfo(event)" style="bacground: red">Info hochladen</button>
+
+            <input id="image" type="file" />
+            <input id="thumbnail" type="file" />
+            <button onclick="tryChangeImage(event)" style="bacground: red">Bild hochladen</button>
+        </form>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>

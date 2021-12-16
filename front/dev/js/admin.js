@@ -1,3 +1,5 @@
+const dayZero = 1640304000000;
+const dayMillis = 86400000;
 function readInputFileAsBase64String(input, callback) {
     var reader = new FileReader();
     reader.onload = () => {
@@ -37,5 +39,66 @@ function upload(method, url, token, contentType, message) {
     xhr.setRequestHeader("Authorization", "Bearer " + token);
     xhr.setRequestHeader("Content-Type", contentType);
     xhr.send(message);
+}
+function getDaysTimeString(day) {
+    var dayInMs = dayZero + day * dayMillis;
+    var date = new Date(dayInMs);
+    return date.toUTCString();
+}
+function printDate(event) {
+    var input = event.target;
+    var form = input.parentElement;
+    var dateP = form.querySelector(":scope > #date");
+    dateP.innerHTML = getDaysTimeString(input.valueAsNumber);
+}
+function tryInit(event) {
+    event.preventDefault();
+    var btn = event.target;
+    var form = btn.parentElement;
+    var dayIn = form.querySelector(":scope > #day");
+    var titleIn = form.querySelector(":scope > #title");
+    var descrIn = form.querySelector(":scope > #innerHTML");
+    initDay(authToken, dayIn.valueAsNumber, titleIn.value, descrIn.value);
+}
+function tryChangeInfo(event) {
+    event.preventDefault();
+    var btn = event.target;
+    var form = btn.parentElement;
+    var dayIn = form.querySelector(":scope > #day");
+    var titleIn = form.querySelector(":scope > #title");
+    var descrIn = form.querySelector(":scope > #innerHTML");
+    changeInfo(authToken, dayIn.valueAsNumber, titleIn.value, descrIn.value);
+}
+function tryChangeImage(event) {
+    event.preventDefault();
+    var btn = event.target;
+    var form = btn.parentElement;
+    var dayIn = form.querySelector(":scope > #day");
+    var imageIn = form.querySelector(":scope > #image");
+    var thumbnailIn = form.querySelector(":scope > #thumbnail");
+    uploadOneImage(authToken, dayIn.valueAsNumber, imageIn, false);
+    uploadOneImage(authToken, dayIn.valueAsNumber, thumbnailIn, true);
+}
+function tryGetDay(event) {
+    var day = event.target.parentElement.querySelector(":scope > #day").valueAsNumber;
+    var dayP = document.querySelector("#fullDay");
+    var query = `${apiUrl}Admin/Media/Full?day=${day}`;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 1) {
+            dayP.innerHTML = "Loading...";
+        }
+        else if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                dayP.innerHTML = xhr.response;
+            }
+            else {
+                dayP.innerHTML = xhr.statusText;
+            }
+        }
+    };
+    xhr.open("GET", query);
+    xhr.setRequestHeader("Authorization", "Bearer " + authToken);
+    xhr.send();
 }
 //# sourceMappingURL=admin.js.map
