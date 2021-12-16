@@ -19,8 +19,24 @@ public class EntryFullDto
         Date = (dateTime.Ticks - 621355968000000000) / 10000000;
         Title = entry.Title;
         InnerHTML = entry.InnerHTML;
-        Image = Convert.ToBase64String(entry.Image.ToArray());
-        Thumbnail = Convert.ToBase64String(entry.Thumbnail.ToArray());
+
+        if (entry.Image is not null)
+        {
+            Image = Convert.ToBase64String(entry.Image.ToArray());
+        }
+        else
+        {
+            Image = null;
+        }
+
+        if (entry.Thumbnail is not null)
+        {
+            Thumbnail = Convert.ToBase64String(entry.Thumbnail.ToArray());
+        }
+        else
+        {
+            Thumbnail = null;
+        }
     }
 }
 
@@ -41,6 +57,14 @@ public class EntryThumbDto
         Day = entry.Day;
         Date = (dateTime.Ticks - 621355968000000000) / 10000000;
         Title = entry.Title;
-        Thumbnail = Convert.ToBase64String(entry.Thumbnail.ToArray());
+
+        if (entry.Thumbnail is not null)
+        {
+            Thumbnail = Convert.ToBase64String(entry.Thumbnail.ToArray());
+        }
+        else
+        {
+            Thumbnail = null;
+        }
     }
 }
