@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
 RUN dotnet tool install --global dotnet-ef
-RUN export PATH="$PATH:/root/.dotnet/tools"
+ENV PATH="$PATH:/root/.dotnet/tools"
 
 COPY letsencrypt/live/xmas-emilie.de /etc/ssl/certs/live/xmas-emilie.de
 COPY letsencrypt/archive/xmas-emilie.de /etc/ssl/certs/archive/xmas-emilie.de
