@@ -97,6 +97,14 @@ namespace xmas
             services.AddScoped<MediaService>();
 
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("https://xmas-emilie.de", "https://www.xmas-emilie.de");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -111,7 +119,7 @@ namespace xmas
 
             app.UseHttpsRedirection();
 
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            app.UseCors();
 
             app.UseRouting();
 
