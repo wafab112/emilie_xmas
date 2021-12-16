@@ -61,10 +61,10 @@ if __name__ == "__main__":
     ssh_cmd(client, "cd /opt/emilie_xmas/backend; docker-compose down", doRead=True)
     if True:
         print_color("y", "### removing api image")
-        ssh_cmd(client, "docker rmi emilie_xmas_xmas2021-api", doRead=True)
+        ssh_cmd(client, "docker backend_xmas2021-api", doRead=True)
     if True:
         print_color("y", "### removing frontend image")
-        ssh_cmd(client, "docker rmi emilie_xmas_xmas2021-frontend", doRead=True)
+        ssh_cmd(client, "docker rmi front_xmas2021-frontend", doRead=True)
 
     ssh_cmd(client, "cd /opt/emilie_xmas; ./deploy.sh", "starting xmas stack", doRead=True, doErrLog=True)
 
