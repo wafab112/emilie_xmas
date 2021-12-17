@@ -81,8 +81,6 @@ public class MediaController: ControllerBase {
         var before = DateTime.Today.AddDays(-7 * weeksBack);
         var day = GivenDay(before);
 
-        return Ok(day);
-
         var result = _mediaService.GetThumbEntriesOfWeek(day);
 
         var today = TodaysDay();
