@@ -51,6 +51,8 @@ function loadData() {
             image.src = URL.createObjectURL(entry.thumbnail);
             text.classList.add("card__text");
             text.innerText = `#${entry.day.toString().padStart(3, "0")} - ${entry.date.getDate().toString().padStart(2, "0")}.${(entry.date.getMonth() + 1).toString().padStart(2, "0")}.${entry.date.getFullYear().toString().slice(2, 3)}`;
+            card.appendChild(image);
+            card.appendChild(text);
             mainDiv.appendChild(card);
         });
     })
