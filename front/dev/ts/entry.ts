@@ -1,4 +1,4 @@
-export class FullEntryDto
+class FullEntryDto
 {
     day: number;
     date: number;
@@ -10,7 +10,7 @@ export class FullEntryDto
     thumbnail: string;
 }
 
-export class FullEntry
+class FullEntry
 {
     day: number;
     date: Date;
@@ -22,7 +22,7 @@ export class FullEntry
     thumbnail: Blob;
 }
 
-export class ThumbEntryDto
+class ThumbEntryDto
 {
     day: number;
     date: number;
@@ -32,7 +32,7 @@ export class ThumbEntryDto
     thumbnail:string;
 }
 
-export class ThumbEntry
+class ThumbEntry
 {
     day: number;
     date: Date;

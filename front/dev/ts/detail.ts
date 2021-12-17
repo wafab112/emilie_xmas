@@ -1,5 +1,3 @@
-import {FullEntry, FullEntryDto, ThumbEntryDto} from "./entry";
-
 interface ILoadingToggle
 {
     toggle(isLoading: boolean): void;
