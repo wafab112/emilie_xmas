@@ -97,10 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
         loadingElement: document.querySelector("#init-loader"),
         toggle: function (isLoading) {
             if (isLoading) {
-                this.loadingToggle.classList.add("loading-element--active");
+                this.loadingElement.classList.add("loading-element--active");
             }
             else {
-                this.loadingToggle.classList.remove("loading-element--active");
+                this.loadingElement.classList.remove("loading-element--active");
             }
         }
     };
