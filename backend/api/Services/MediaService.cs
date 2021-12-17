@@ -158,6 +158,8 @@ public class MediaService
         {
             var entry = GetThumbEntry(dayMonday + i); 
 
+            if (entry is null) continue;
+
             if (entry.Day > day) continue;
 
             list.Add(entry);
@@ -175,6 +177,8 @@ public class MediaService
         for (int i = 0; i<DateTime.DaysInMonth(DateTimeOfDay(day).Year, DateTimeOfDay(day).Month); i++)
         {
             var entry = GetThumbEntry(dayFirst + i); 
+
+            if (entry is null) continue;
 
             if (entry.Day > day) continue;
 
