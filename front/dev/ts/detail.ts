@@ -1,20 +1,3 @@
-interface ILoadingToggle
-{
-    toggle(isLoading: boolean): void;
-    loadingElement: HTMLElement;
-}
-
-interface IXhrRejection
-{
-    status: number;
-    processName: string;
-}
-
-function isXhrRejection(object: any): object is IXhrRejection
-{
-    return ("status" in object && "processName" in object);
-}
-
 async function whatDay(token: string, loadingToggle: ILoadingToggle): Promise<number>
 {
     async function returnToday(): Promise<number>
@@ -30,7 +13,12 @@ async function whatDay(token: string, loadingToggle: ILoadingToggle): Promise<nu
     var hrefParts = href.split("?");
     if (hrefParts.length !== 2)
     {
-        return returnToday();
+        if (hrefParts[0] !== url && hrefParts[0] !== url + "index" && hrefParts[0] !== url + "index.html")
+        {
+            return returnToday();
+        }
+
+        return new Promise((resolve, reject) => resolve(0));
     }
 
     var queries = hrefParts[1].split("&");
@@ -134,11 +122,11 @@ async function fetchDto(token: string, day: number, isThumbnail: boolean, loadin
 
         if (isThumbnail)
         {
-            xhr.open("GET", apiUrl + "Admin/Media/Thumb?day=" + day);
+            xhr.open("GET", apiUrl + "Media/Thumb?day=" + day);
         }
         else 
         {
-            xhr.open("GET", apiUrl + "Admin/Media/Full?day=" + day);
+            xhr.open("GET", apiUrl + "Media/Full?day=" + day);
         }
 
         xhr.setRequestHeader("Authorization", "Bearer " + authToken);

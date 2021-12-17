@@ -23,13 +23,27 @@
         </nav>
     </header>
 
-    <main>
-        <div class="toggler">
-        </div>
+    <button class="toggler">
+        <p id="toggler-week">
+            Woche
+        </p>
+        <p id="toggler-month">
+            Monat
+        </p>
+    </button>
 
-        <div id="init-loader" class="loading-element">
-        </div>
+    <div id="init-loader" class="loading-element">
+    </div>
+
+    <main>
     </main>
+
+    <button onclick="changeCurrent(true)" class="arrow arrow--left">
+        &lt;
+    </button>
+    <button onclick="changeCurrent(false)" class="arrow arrow--right">
+        &gt;
+    </button>
 
     <footer>
     </footer>

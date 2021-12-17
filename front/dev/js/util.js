@@ -7,6 +7,9 @@ var ErrorCode;
 (function (ErrorCode) {
     ErrorCode[ErrorCode["EntryShouldBeFull"] = -69] = "EntryShouldBeFull";
 })(ErrorCode || (ErrorCode = {}));
+function isXhrRejection(object) {
+    return ("status" in object && "processName" in object);
+}
 function base64ToBlob(base64) {
     const byteChars = atob(base64);
     const byteNumbers = new Array(byteChars.length);

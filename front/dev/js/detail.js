@@ -7,9 +7,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function isXhrRejection(object) {
-    return ("status" in object && "processName" in object);
-}
 function whatDay(token, loadingToggle) {
     return __awaiter(this, void 0, void 0, function* () {
         function returnToday() {
@@ -22,7 +19,10 @@ function whatDay(token, loadingToggle) {
         var href = window.location.href;
         var hrefParts = href.split("?");
         if (hrefParts.length !== 2) {
-            return returnToday();
+            if (hrefParts[0] !== url && hrefParts[0] !== url + "index" && hrefParts[0] !== url + "index.html") {
+                return returnToday();
+            }
+            return new Promise((resolve, reject) => resolve(0));
         }
         var queries = hrefParts[1].split("&");
         if (queries.length > 1) {
@@ -96,10 +96,10 @@ function fetchDto(token, day, isThumbnail, loadingToggle) {
                 }
             };
             if (isThumbnail) {
-                xhr.open("GET", apiUrl + "Admin/Media/Thumb?day=" + day);
+                xhr.open("GET", apiUrl + "Media/Thumb?day=" + day);
             }
             else {
-                xhr.open("GET", apiUrl + "Admin/Media/Full?day=" + day);
+                xhr.open("GET", apiUrl + "Media/Full?day=" + day);
             }
             xhr.setRequestHeader("Authorization", "Bearer " + authToken);
             xhr.send();

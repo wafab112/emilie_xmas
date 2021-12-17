@@ -10,6 +10,23 @@ enum ErrorCode
     EntryShouldBeFull = -69
 }
 
+interface ILoadingToggle
+{
+    toggle(isLoading: boolean): void;
+    loadingElement: HTMLElement;
+}
+
+interface IXhrRejection
+{
+    status: number;
+    processName: string;
+}
+
+function isXhrRejection(object: any): object is IXhrRejection
+{
+    return ("status" in object && "processName" in object);
+}
+
 function base64ToBlob(base64: string): Blob
 {
     const byteChars = atob(base64);
