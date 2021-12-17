@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () =>
             var imageElement = document.createElement("img") as HTMLImageElement; 
 
             var overlayElement = document.createElement("div") as HTMLElement;
-            var overlaySpan = document.createElement("span") as HTMLElement; 
+            var overlayLink = document.createElement("a") as HTMLAnchorElement; 
             var overlayImage = document.createElement("img") as HTMLImageElement;
             var overlayText = document.createElement("p") as HTMLElement;
 
@@ -216,6 +216,8 @@ document.addEventListener("DOMContentLoaded", () =>
 
             overlayElement.classList.add("overlay");
 
+            overlayLink.href = URL.createObjectURL(entry.image);
+            overlayLink.setAttribute("download", entry.day.toString() + "-xmas");
             overlayImage.src = "img/save.png";
             overlayText.innerText = "Speichern";
 
@@ -226,9 +228,9 @@ document.addEventListener("DOMContentLoaded", () =>
             mainElement.appendChild(imageElement);
 
             mainElement.appendChild(overlayElement);
-            mainElement.appendChild(overlaySpan);
-            mainElement.appendChild(overlayImage);
-            mainElement.appendChild(overlayText);
+            overlayElement.appendChild(overlayLink);
+            overlayLink.appendChild(overlayImage);
+            overlayLink.appendChild(overlayText);
 
             mainElement.appendChild(titleElement);
             mainElement.appendChild(subTitleElement);

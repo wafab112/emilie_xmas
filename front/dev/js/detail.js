@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         var imageElement = document.createElement("img");
         var overlayElement = document.createElement("div");
-        var overlaySpan = document.createElement("span");
+        var overlayLink = document.createElement("a");
         var overlayImage = document.createElement("img");
         var overlayText = document.createElement("p");
         var titleElement = document.createElement("h1");
@@ -153,6 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
         imageElement.src = URL.createObjectURL(entry.image);
         imageElement.classList.add("base-image");
         overlayElement.classList.add("overlay");
+        overlayLink.href = URL.createObjectURL(entry.image);
+        overlayLink.setAttribute("download", entry.day.toString() + "-xmas");
         overlayImage.src = "img/save.png";
         overlayText.innerText = "Speichern";
         titleElement.innerText = entry.title;
@@ -160,9 +162,9 @@ document.addEventListener("DOMContentLoaded", () => {
         textElement.innerText = entry.innerHTML;
         mainElement.appendChild(imageElement);
         mainElement.appendChild(overlayElement);
-        mainElement.appendChild(overlaySpan);
-        mainElement.appendChild(overlayImage);
-        mainElement.appendChild(overlayText);
+        overlayElement.appendChild(overlayLink);
+        overlayLink.appendChild(overlayImage);
+        overlayLink.appendChild(overlayText);
         mainElement.appendChild(titleElement);
         mainElement.appendChild(subTitleElement);
         mainElement.appendChild(textElement);
