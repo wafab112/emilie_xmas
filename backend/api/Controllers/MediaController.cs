@@ -79,6 +79,7 @@ public class MediaController: ControllerBase {
     public IActionResult GetWeekThumb([FromQuery] int weeksBack)
     {
         var before = DateTime.Today.AddDays(-7 * weeksBack);
+        Console.LogWarning(before);
         var day = GivenDay(before);
 
         var result = _mediaService.GetThumbEntriesOfWeek(day);
