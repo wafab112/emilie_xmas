@@ -153,11 +153,19 @@ document.addEventListener("DOMContentLoaded", () => {
         imageElement.src = URL.createObjectURL(entry.image);
         imageElement.classList.add("base-image");
         overlayElement.classList.add("overlay");
-        overlayImage.src = "img/save";
+        overlayImage.src = "img/save.png";
         overlayText.innerText = "Speichern";
         titleElement.innerText = entry.title;
         subTitleElement.innerText = `#${entry.day.toString().padStart(3, "0")} - ${entry.date.getDate().toString().padStart(2, "0")}.${(entry.date.getMonth() + 1).toString().padStart(2, "0")}.${entry.date.getFullYear().toString()}`;
         textElement.innerText = entry.innerHTML;
+        mainElement.appendChild(imageElement);
+        mainElement.appendChild(overlayElement);
+        mainElement.appendChild(overlaySpan);
+        mainElement.appendChild(overlayImage);
+        mainElement.appendChild(overlayText);
+        mainElement.appendChild(titleElement);
+        mainElement.appendChild(subTitleElement);
+        mainElement.appendChild(textElement);
     })
         .catch((reason) => {
         if (isXhrRejection(reason)) {
