@@ -150,7 +150,7 @@ public class MediaService
 
     public EntryThumbDto[] GetThumbEntriesOfWeek(int day)
     {
-        List<EntryThumbDto> list = new();
+        List<EntryThumbDto> list = new List<EntryThumbDto>();
         
         var dayMonday = day + 1 - (int)DateTimeOfDay(day).DayOfWeek;
 
@@ -168,7 +168,7 @@ public class MediaService
 
     public EntryThumbDto[] GetThumbEntriesOfMonth(int day)
     {
-        List<EntryThumbDto> list = new();
+        List<EntryThumbDto> list = new List<EntryThumbDto>();
         
         var dayFirst = day + 1 - (int)DateTimeOfDay(day).Day;
 
