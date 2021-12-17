@@ -1,6 +1,21 @@
 let url = "https://xmas-emilie.de/";
 let apiUrl = "https://api.xmas-emilie.de/";
 var authToken = "";
+const dayZero = 1640304000000;
+const dayMillis = 86400000;
+var ErrorCode;
+(function (ErrorCode) {
+    ErrorCode[ErrorCode["EntryShouldBeFull"] = -69] = "EntryShouldBeFull";
+})(ErrorCode || (ErrorCode = {}));
+function base64ToBlob(base64) {
+    const byteChars = atob(base64);
+    const byteNumbers = new Array(byteChars.length);
+    for (let i = 0; i < byteChars.length; i++) {
+        byteNumbers[i] = byteChars.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    return new Blob(new Array(byteArray), { type: "image" });
+}
 function saveAuthToken(token) {
     window.localStorage.setItem("authToken", token);
 }

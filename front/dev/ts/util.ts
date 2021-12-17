@@ -2,6 +2,27 @@ let url = "https://xmas-emilie.de/";
 let apiUrl = "https://api.xmas-emilie.de/";
 var authToken = "";
 
+const dayZero = 1640304000000;
+const dayMillis = 86400000; 
+
+enum ErrorCode
+{
+    EntryShouldBeFull = -69
+}
+
+function base64ToBlob(base64: string): Blob
+{
+    const byteChars = atob(base64);
+
+    const byteNumbers = new Array<number>(byteChars.length);
+    for (let i = 0; i<byteChars.length; i++)
+    {
+        byteNumbers[i] = byteChars.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    return new Blob(new Array(byteArray), {type: "image"});
+}
+
 function saveAuthToken(token: string)
 {
     window.localStorage.setItem("authToken", token);
