@@ -98,10 +98,10 @@ function fetchDto(token, day, isThumbnail, loadingToggle) {
                 }
             };
             if (isThumbnail) {
-                xhr.open("GET", apiUrl + "/Media/Thumb?day=" + day);
+                xhr.open("GET", apiUrl + "Admin/Media/Thumb?day=" + day);
             }
             else {
-                xhr.open("GET", apiUrl + "/Media/Full?day=" + day);
+                xhr.open("GET", apiUrl + "Admin/Media/Full?day=" + day);
             }
             xhr.setRequestHeader("Authorization", "Bearer " + authToken);
             xhr.send();

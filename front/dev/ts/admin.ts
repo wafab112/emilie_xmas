@@ -1,6 +1,3 @@
-const dayZero = 1640304000000;
-const dayMillis = 86400000; 
-
 interface IFileReaderResultFunction
 {
     (fileBase64String: string) : void;

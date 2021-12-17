@@ -1,5 +1,3 @@
-const dayZero = 1640304000000;
-const dayMillis = 86400000;
 function readInputFileAsBase64String(input, callback) {
     var reader = new FileReader();
     reader.onload = () => {

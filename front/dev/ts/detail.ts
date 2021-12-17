@@ -136,11 +136,11 @@ async function fetchDto(token: string, day: number, isThumbnail: boolean, loadin
 
         if (isThumbnail)
         {
-            xhr.open("GET", apiUrl + "/Media/Thumb?day=" + day);
+            xhr.open("GET", apiUrl + "Admin/Media/Thumb?day=" + day);
         }
         else 
         {
-            xhr.open("GET", apiUrl + "/Media/Full?day=" + day);
+            xhr.open("GET", apiUrl + "Admin/Media/Full?day=" + day);
         }
 
         xhr.setRequestHeader("Authorization", "Bearer " + authToken);
