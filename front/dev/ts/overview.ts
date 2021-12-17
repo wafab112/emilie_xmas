@@ -86,17 +86,18 @@ async function fetchArray(token: string, of: number, isWeek: boolean, loadingTog
             }
             else if (xhr.readyState === 4)
             {
+                loadingToggle.toggle(false)
                 if (xhr.status !== 200)
                 {
                     var rejection: IXhrRejection = {
                         status: xhr.status,
                         processName: "fetchArray" 
                     };
+                    reject(rejection);
                 }
-                loadingToggle.toggle(false)
 
                 var response: [ThumbEntryDto] = JSON.parse(xhr.response); 
-                return response;
+                resolve(response);
             }
         };
 

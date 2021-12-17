@@ -70,15 +70,16 @@ function fetchArray(token, of, isWeek, loadingToggle) {
                     loadingToggle.toggle(true);
                 }
                 else if (xhr.readyState === 4) {
+                    loadingToggle.toggle(false);
                     if (xhr.status !== 200) {
                         var rejection = {
                             status: xhr.status,
                             processName: "fetchArray"
                         };
+                        reject(rejection);
                     }
-                    loadingToggle.toggle(false);
                     var response = JSON.parse(xhr.response);
-                    return response;
+                    resolve(response);
                 }
             };
             if (isWeek) {
