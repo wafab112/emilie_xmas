@@ -172,7 +172,7 @@ public class MediaService
     {
         List<EntryThumbDto> list = new List<EntryThumbDto>();
         
-        var dayFirst = day1 - (int)DateTimeOfDay(day).Day;
+        var dayFirst = day - (int)DateTimeOfDay(day).Day;
 
         for (int i = 0; i<DateTime.DaysInMonth(DateTimeOfDay(day).Year, DateTimeOfDay(day).Month); i++)
         {
