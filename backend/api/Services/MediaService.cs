@@ -158,7 +158,7 @@ public class MediaService
         {
             var entry = GetThumbEntry(dayMonday + i); 
 
-            if (entry is null) break;
+            if (entry.Day > day) continue;
 
             list.Add(entry);
         }
@@ -176,7 +176,7 @@ public class MediaService
         {
             var entry = GetThumbEntry(dayFirst + i); 
 
-            if (entry is null) break;
+            if (entry.Day > day) continue;
 
             list.Add(entry);
         }
