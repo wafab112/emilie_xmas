@@ -152,7 +152,7 @@ public class MediaService
     {
         List<EntryThumbDto> list = new List<EntryThumbDto>();
         
-        var dayMonday = day + 1 - (int)DateTimeOfDay(day).DayOfWeek;
+        var dayMonday = day - (int)DateTimeOfDay(day).DayOfWeek;
 
         for (int i = 0; i<7; i++)
         {
@@ -172,7 +172,7 @@ public class MediaService
     {
         List<EntryThumbDto> list = new List<EntryThumbDto>();
         
-        var dayFirst = day + 1 - (int)DateTimeOfDay(day).Day;
+        var dayFirst = day1 - (int)DateTimeOfDay(day).Day;
 
         for (int i = 0; i<DateTime.DaysInMonth(DateTimeOfDay(day).Year, DateTimeOfDay(day).Month); i++)
         {
