@@ -13,8 +13,8 @@ function toggleWeek(event: Event)
 {
     isWeek = !isWeek;
     
-    let togglerWeek = (event.target as HTMLElement).querySelector(":scope > #toggler-week");
-    let togglerMonth = (event.target as HTMLElement).querySelector(":scope > #toggler-month");
+    let togglerWeek = document.querySelector("#toggler-week");
+    let togglerMonth = document.querySelector("#toggler-month");
     if (isWeek)
     {
         togglerWeek.classList.add("toggler__active");

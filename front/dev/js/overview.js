@@ -19,8 +19,8 @@ function changeCurrent(doDecrement = true) {
 }
 function toggleWeek(event) {
     isWeek = !isWeek;
-    let togglerWeek = event.target.querySelector(":scope > #toggler-week");
-    let togglerMonth = event.target.querySelector(":scope > #toggler-month");
+    let togglerWeek = document.querySelector("#toggler-week");
+    let togglerMonth = document.querySelector("#toggler-month");
     if (isWeek) {
         togglerWeek.classList.add("toggler__active");
         togglerMonth.classList.remove("toggler__active");
