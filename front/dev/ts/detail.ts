@@ -1,8 +1,3 @@
-function isXhrRejection(object: any): object is IXhrRejection
-{
-    return ("status" in object && "processName" in object);
-}
-
 async function whatDay(token: string, loadingToggle: ILoadingToggle): Promise<number>
 {
     async function returnToday(): Promise<number>
