@@ -1,0 +1,22 @@
+@use "sass:map" as map;
+
+@use "vars" as v;
+@use "mixins" as m;
+
+.base-image {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    height: 100px;
+    overflow: hidden;
+
+    a {
+        display: block;
+        width: 100vw;
+        height: 100vw;
+        border-radius: 50%;
+        background-color: red;
+    }
+}
