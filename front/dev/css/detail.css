@@ -42,5 +42,8 @@ main h1,
 main h2 {
   color: #800032;
 }
+main .main__body {
+  padding: 2em;
+}
 
 /*# sourceMappingURL=detail.css.map */
