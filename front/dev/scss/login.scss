@@ -3,8 +3,14 @@
 @use "vars" as v;
 @use "mixins" as m;
 
+main {
+    padding: 2em;
+    text-align: justify;
+}
+
 h1 {
     font-family: "Roboto", sans-serif;
+    text-align: center;
     color: map.get(v.$colors, "red");
 }
 
@@ -15,6 +21,7 @@ button {
 
 input {
     background: darken(map.get(v.$colors, "white"), 10%);
+    border: 0;
     border-bottom: 2px solid map.get(v.$colors, "blue");
     padding: 1em;
     width: 100%;
@@ -23,4 +30,5 @@ input {
 button {
     background: map.get(v.$colors, "blue");
     color: map.get(v.$colors, "white");
+    padding: 1em;
 }
