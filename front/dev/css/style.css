@@ -1,17 +1,33 @@
-/* Error: @use rules must be written before any other rules.
- *   ,
- * 3 | @use "sass:map" as map;
- *   | ^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\style.scss 3:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: @use rules must be written before any other rules.\a   \2577 \a 3 \2502  @use "sass:map" as map;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\style.scss 3:1  root stylesheet';
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Nunito:wght@300&display=swap");
+* {
+  box-sizing: border-box;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FEFCFB;
+}
+
+header {
+  background: #2C5784;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Nunito", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Nunito:wght@300&display=swap');
-
 @use "sass:map" as map;
 
 @use "vars" as v;
 @use "mixins" as m;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Nunito:wght@300&display=swap');
 
 * {
     box-sizing: border-box;
