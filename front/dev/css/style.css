@@ -16,6 +16,7 @@ body {
 header {
   background: #2C5784;
   padding: 1em 2em;
+  position: fixed;
 }
 header .menu {
   display: flex;
@@ -52,6 +53,8 @@ header nav {
 }
 header nav a {
   color: #FEFCFB;
+  text-decoration: none;
+  margin: 1em;
 }
 header nav.open {
   display: flex;

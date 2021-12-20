@@ -22,6 +22,7 @@ body {
 header {
     background: map.get(v.$colors, "blue");
     padding: 1em 2em;
+    position: fixed;
 
     .menu {
         display: flex;
@@ -68,6 +69,8 @@ header {
 
         a {
             color: map.get(v.$colors, "white");
+            text-decoration: none;
+            margin: 1em;
         }
 
         &.open {
