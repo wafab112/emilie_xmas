@@ -113,6 +113,19 @@ function checkSavedTokenValidity()
     return checkTokenExpiration(token);
 }
 
+function toggleNav(event: Event) 
+{
+    var nav = document.querySelector("nav");
+    if (nav.classList.contains("open"))
+    {
+        nav.classList.remove("open");
+    }
+    else 
+    {
+        nav.classList.add("open");
+    }
+}
+
 // Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.href.startsWith(`${url}login`))

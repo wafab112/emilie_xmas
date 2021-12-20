@@ -70,6 +70,15 @@ function checkSavedTokenValidity() {
         return false;
     return checkTokenExpiration(token);
 }
+function toggleNav(event) {
+    var nav = document.querySelector("nav");
+    if (nav.classList.contains("open")) {
+        nav.classList.remove("open");
+    }
+    else {
+        nav.classList.add("open");
+    }
+}
 document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.href.startsWith(`${url}login`)) {
         var isTokenValid = checkSavedTokenValidity();

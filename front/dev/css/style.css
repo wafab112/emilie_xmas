@@ -49,6 +49,8 @@ header .menu__open {
 }
 header nav {
   display: none;
+}
+header nav a {
   color: #FEFCFB;
 }
 header nav.open {
