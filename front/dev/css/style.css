@@ -15,9 +15,13 @@ body {
 
 header {
   background: #2C5784;
+  padding: 1em 2em;
 }
 header a {
   color: #FEFCFB;
+}
+header a #menu__number {
+  margin-left: 0.5em;
 }
 
 h1 {

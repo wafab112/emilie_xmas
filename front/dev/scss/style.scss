@@ -21,9 +21,14 @@ body {
 
 header {
     background: map.get(v.$colors, "blue");
+    padding: 1em 2em;
 
     a {
         color: map.get(v.$colors, "white");
+
+        #menu__number {
+            margin-left: .5em;
+        }
     }
 }
 
