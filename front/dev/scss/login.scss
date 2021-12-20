@@ -1,3 +1,8 @@
+@use "sass:map" as map;
+
+@use "vars" as v;
+@use "mixins" as m;
+
 h1 {
     font-family: "Roboto", sans-serif;
     color: map.get(v.$colors, "red");

@@ -1,17 +1,23 @@
-/* Error: There is no module with the namespace "map".
- *   ,
- * 3 |     color: map.get(v.$colors, "red");
- *   |            ^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\login.scss 3:12  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: There is no module with the namespace "map".\a   \2577 \a 3 \2502      color: map.get(v.$colors, "red");\d\a   \2502             ^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\login.scss 3:12  root stylesheet';
+h1 {
+  font-family: "Roboto", sans-serif;
+  color: #800032;
 }
+
+input,
+button {
+  display: block;
+}
+
+input {
+  background: #f4ddd2;
+  border-bottom: 2px solid #2C5784;
+  padding: 1em;
+  width: 100%;
+}
+
+button {
+  background: #2C5784;
+  color: #FEFCFB;
+}
+
+/*# sourceMappingURL=login.css.map */
