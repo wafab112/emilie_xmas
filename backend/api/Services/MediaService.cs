@@ -94,11 +94,19 @@ public class MediaService
         {
             var entry = _context.Calendar.First<Entry>(x => x.Day == model.Day);
 
-            List<byte> image = Convert.FromBase64String(model.Image).ToList();
-            List<byte> thumbnail = Convert.FromBase64String(model.Thumbnail).ToList();
+            if (!model.Image.Equals(""))
+            {
+                _logger.LogInformation(model.Image);
+                List<byte> image = Convert.FromBase64String(model.Image).ToList();
+                entry.Image = image;
+            }
 
-            entry.Image = image;
-            entry.Thumbnail = thumbnail;
+            if (!model.Thumbnail.Equals(""))
+            {
+                _logger.LogInformation(model.Thumbnail);
+                List<byte> thumbnail = Convert.FromBase64String(model.Thumbnail).ToList();
+                entry.Thumbnail = thumbnail;
+            }
 
             await _context.SaveChangesAsync();
 

@@ -1,5 +1,5 @@
 # create db container
-docker-compose up -d
+# docker-compose -f db-compose.yml up -d
 
 mkdir -p /opt/emilie_xmas/front/letsencrypt/live/xmas-emilie.de
 mkdir -p /opt/emilie_xmas/front/letsencrypt/archive/xmas-emilie.de
@@ -18,5 +18,5 @@ export DOTNET_ROOT="$HOME/.dotnet"
 export PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH"
 cd /opt/emilie_xmas/backend/api; dotnet-ef database update --verbose
 
-cd /opt/emilie_xmas/backend; docker-compose up -d
-cd /opt/emilie_xmas/front; docker-compose up -d
+cd /opt/emilie_xmas/backend; docker-compose -f backend-compose.yml up -d
+cd /opt/emilie_xmas/front; docker-compose -f front-compose.yml up -d
