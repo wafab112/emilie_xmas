@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Nunito:wght@300&display=swap');
+
 @use "sass:map" as map;
 
 @use "vars" as v;
@@ -19,4 +21,17 @@ body {
 
 header {
     background: map.get(v.$colors, "blue");
+}
+
+h1 {
+    font-family: "Dancing Script", cursive;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: "Nunito", sans-serif;
 }

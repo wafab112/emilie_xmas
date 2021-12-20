@@ -1,19 +1,17 @@
-* {
-  box-sizing: border-box;
-}
+/* Error: @use rules must be written before any other rules.
+ *   ,
+ * 3 | @use "sass:map" as map;
+ *   | ^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   scss\style.scss 3:1  root stylesheet */
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: @use rules must be written before any other rules.\a   \2577 \a 3 \2502  @use "sass:map" as map;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\style.scss 3:1  root stylesheet';
 }
-
-body {
-  background: #FEFCFB;
-}
-
-header {
-  background: #2C5784;
-}
-
-/*# sourceMappingURL=style.css.map */
