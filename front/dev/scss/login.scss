@@ -32,7 +32,7 @@ button {
     background: map.get(v.$colors, "blue");
     color: map.get(v.$colors, "white");
     border: 0;
-    padding: 1em;
+    padding: 1em 3em;
     margin: 0 auto;
-    font-family: "Dancing Script";
+    font-family: "Roboto", sans-serif;
 }
