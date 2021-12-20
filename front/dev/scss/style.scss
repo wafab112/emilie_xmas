@@ -21,6 +21,7 @@ body {
 
 header {
     background: map.get(v.$colors, "blue");
+    color: map.get(v.$colors, "white");
 }
 
 h1 {

@@ -235,6 +235,13 @@ document.addEventListener("DOMContentLoaded", () =>
             bodyElement.appendChild(subTitleElement);
             bodyElement.appendChild(textElement);
 
+
+            var backNumber = document.querySelector("#menu__number") as HTMLElement;
+            if (backNumber !== null && backNumber !== undefined)
+            {
+                backNumber.innerText = entry.day.toString().padStart(3, "0");
+            }
+
         })
         .catch((reason: any) =>
         {

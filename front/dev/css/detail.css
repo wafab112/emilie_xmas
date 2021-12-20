@@ -41,9 +41,11 @@
 main h1,
 main h2 {
   color: #800032;
+  text-align: center;
 }
 main .main__body {
   padding: 2em;
+  text-align: justify;
 }
 
 /*# sourceMappingURL=detail.css.map */

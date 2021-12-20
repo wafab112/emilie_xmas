@@ -65,9 +65,11 @@ main {
     h1,
     h2 {
         color: map.get(v.$colors, "red");
+        text-align: center;
     }
 
     .main__body {
         padding: 2em;
+        text-align: justify;
     }
 }
