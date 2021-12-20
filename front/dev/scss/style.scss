@@ -16,3 +16,7 @@ body {
 body {
     background: map.get(v.$colors, "white");
 }
+
+header {
+    background: map.get(v.$colors, "blue");
+}

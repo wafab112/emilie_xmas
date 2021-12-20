@@ -22,10 +22,21 @@
 
         a {
             display: block;
+
             width: 100vw;
             height: 100vw;
+
             border-radius: 50%;
+
             background-color: map.get(v.$colors, "white");
+            color: map.get(v.$colors, "blue");
+
+            text-decoration: none;
+
+            &:active,
+            &:visited {
+                color: map.get(v.$colors, "blue");
+            }
 
             img {
                 width: 2em;
