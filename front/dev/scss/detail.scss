@@ -21,7 +21,11 @@
         bottom: 0;
 
         a {
-            display: block;
+            display: flex;
+
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
 
             width: 100vw;
             height: 100vw;
