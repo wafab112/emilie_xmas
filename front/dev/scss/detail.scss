@@ -6,11 +6,13 @@
 .base-image {
     width: 100%;
     height: auto;
+    position: relative;
 }
 
 .overlay {
     height: 100px;
     overflow: hidden;
+    position: absolute;
 
     a {
         display: block;
@@ -18,5 +20,10 @@
         height: 100vw;
         border-radius: 50%;
         background-color: red;
+
+        img {
+            width: 2em;
+            height: 2em;
+        }
     }
 }
