@@ -24,15 +24,25 @@ header {
     padding: 1em 2em;
 
     a.menu__back {
+        display: flex;
+
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
         color: map.get(v.$colors, "white");
         text-decoration: none;
 
         img {
+            display: block;
+
             width: 1em;
             height: 1em;
         }
 
         #menu__number {
+            display: block;
+
             margin-left: .25em;
         }
     }

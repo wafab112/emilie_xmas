@@ -18,14 +18,20 @@ header {
   padding: 1em 2em;
 }
 header a.menu__back {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   color: #FEFCFB;
   text-decoration: none;
 }
 header a.menu__back img {
+  display: block;
   width: 1em;
   height: 1em;
 }
 header a.menu__back #menu__number {
+  display: block;
   margin-left: 0.25em;
 }
 
