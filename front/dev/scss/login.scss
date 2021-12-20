@@ -1,0 +1,21 @@
+h1 {
+    font-family: "Roboto", sans-serif;
+    color: map.get(v.$colors, "red");
+}
+
+input,
+button {
+    display: block;
+}
+
+input {
+    background: darken(map.get(v.$colors, "white"), 10%);
+    border-bottom: 2px solid map.get(v.$colors, "blue");
+    padding: 1em;
+    width: 100%;
+}
+
+button {
+    background: map.get(v.$colors, "blue"):
+    color: map.get(v.$colors, "white");
+}
