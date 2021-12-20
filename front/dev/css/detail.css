@@ -38,6 +38,10 @@
   margin: 0.25em;
 }
 
+main {
+  position: relative;
+  z-index: -1;
+}
 main h1,
 main h2 {
   color: #800032;
