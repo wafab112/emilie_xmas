@@ -23,11 +23,17 @@ header {
     background: map.get(v.$colors, "blue");
     padding: 1em 2em;
 
-    a {
+    a.menu__back {
         color: map.get(v.$colors, "white");
+        text-decoration: none;
+
+        img {
+            width: 1em;
+            height: 1em;
+        }
 
         #menu__number {
-            margin-left: .5em;
+            margin-left: .25em;
         }
     }
 }

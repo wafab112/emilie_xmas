@@ -17,11 +17,16 @@ header {
   background: #2C5784;
   padding: 1em 2em;
 }
-header a {
+header a.menu__back {
   color: #FEFCFB;
+  text-decoration: none;
 }
-header a #menu__number {
-  margin-left: 0.5em;
+header a.menu__back img {
+  width: 1em;
+  height: 1em;
+}
+header a.menu__back #menu__number {
+  margin-left: 0.25em;
 }
 
 h1 {
