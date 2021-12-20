@@ -18,7 +18,7 @@ async function whatDay(token: string, loadingToggle: ILoadingToggle): Promise<nu
             return returnToday();
         }
 
-        return returnToday();
+        return fetchTodaysNumber(token, loadingToggle);
     }
 
     var queries = hrefParts[1].split("&");

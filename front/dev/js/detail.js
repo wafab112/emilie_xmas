@@ -22,7 +22,7 @@ function whatDay(token, loadingToggle) {
             if (hrefParts[0] !== url && hrefParts[0] !== url + "index" && hrefParts[0] !== url + "index.html") {
                 return returnToday();
             }
-            return returnToday();
+            return fetchTodaysNumber(token, loadingToggle);
         }
         var queries = hrefParts[1].split("&");
         if (queries.length > 1) {
