@@ -11,8 +11,11 @@
 
 .overlay {
     height: 100px;
+    width: 100%;
     overflow: hidden;
     position: absolute;
+    bottom: 0;
+    left: 0;
 
     a {
         display: block;
