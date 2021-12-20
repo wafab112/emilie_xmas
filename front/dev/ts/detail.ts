@@ -198,6 +198,8 @@ document.addEventListener("DOMContentLoaded", () =>
             var overlayImage = document.createElement("img") as HTMLImageElement;
             var overlayText = document.createElement("p") as HTMLElement;
 
+            var bodyElement = document.createElement("div") as HTMLElement;
+
             var titleElement = document.createElement("h1") as HTMLElement;
             var subTitleElement = document.createElement("h2") as HTMLElement;
             var textElement = document.createElement("p") as HTMLElement;
@@ -212,6 +214,8 @@ document.addEventListener("DOMContentLoaded", () =>
             overlayImage.src = "img/save.png";
             overlayText.innerText = "Speichern";
 
+            bodyElement.classList.add("main__body");
+
             titleElement.innerText = entry.title;
             subTitleElement.innerText = `#${entry.day.toString().padStart(3, "0")} - ${entry.date.getDate().toString().padStart(2, "0")}.${(entry.date.getMonth() + 1).toString().padStart(2, "0")}.${entry.date.getFullYear().toString()}`;
             textElement.innerText = entry.innerHTML;
@@ -225,9 +229,11 @@ document.addEventListener("DOMContentLoaded", () =>
             overlayLink.appendChild(overlayImage);
             overlayLink.appendChild(overlayText);
 
-            mainElement.appendChild(titleElement);
-            mainElement.appendChild(subTitleElement);
-            mainElement.appendChild(textElement);
+            mainElement.appendChild(bodyElement);
+
+            bodyElement.appendChild(titleElement);
+            bodyElement.appendChild(subTitleElement);
+            bodyElement.appendChild(textElement);
 
         })
         .catch((reason: any) =>

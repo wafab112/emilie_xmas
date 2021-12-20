@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         var overlayLink = document.createElement("a");
         var overlayImage = document.createElement("img");
         var overlayText = document.createElement("p");
+        var bodyElement = document.createElement("div");
         var titleElement = document.createElement("h1");
         var subTitleElement = document.createElement("h2");
         var textElement = document.createElement("p");
@@ -159,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         overlayLink.setAttribute("download", entry.day.toString() + "-xmas");
         overlayImage.src = "img/save.png";
         overlayText.innerText = "Speichern";
+        bodyElement.classList.add("main__body");
         titleElement.innerText = entry.title;
         subTitleElement.innerText = `#${entry.day.toString().padStart(3, "0")} - ${entry.date.getDate().toString().padStart(2, "0")}.${(entry.date.getMonth() + 1).toString().padStart(2, "0")}.${entry.date.getFullYear().toString()}`;
         textElement.innerText = entry.innerHTML;
@@ -168,9 +170,10 @@ document.addEventListener("DOMContentLoaded", () => {
         overlayElement.appendChild(overlayLink);
         overlayLink.appendChild(overlayImage);
         overlayLink.appendChild(overlayText);
-        mainElement.appendChild(titleElement);
-        mainElement.appendChild(subTitleElement);
-        mainElement.appendChild(textElement);
+        mainElement.appendChild(bodyElement);
+        bodyElement.appendChild(titleElement);
+        bodyElement.appendChild(subTitleElement);
+        bodyElement.appendChild(textElement);
     })
         .catch((reason) => {
         if (isXhrRejection(reason)) {
