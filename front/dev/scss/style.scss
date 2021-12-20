@@ -72,7 +72,8 @@ header {
         a {
             color: map.get(v.$colors, "white");
             text-decoration: none;
-            margin: 1em;
+            margin: 1em 0;
+            font-family: "Roboto", sans-serif;
         }
 
         &.open {

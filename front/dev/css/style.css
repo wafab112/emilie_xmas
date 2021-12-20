@@ -56,7 +56,8 @@ header nav {
 header nav a {
   color: #FEFCFB;
   text-decoration: none;
-  margin: 1em;
+  margin: 1em 0;
+  font-family: "Roboto", sans-serif;
 }
 header nav.open {
   display: flex;
