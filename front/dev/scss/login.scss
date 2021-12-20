@@ -25,11 +25,12 @@ input {
     border-bottom: 2px solid map.get(v.$colors, "blue");
     padding: 1em;
     width: 100%;
-    margin: 1em;
+    margin: 1em 0;
 }
 
 button {
     background: map.get(v.$colors, "blue");
     color: map.get(v.$colors, "white");
     padding: 1em;
+    margin: 0 auto;
 }
