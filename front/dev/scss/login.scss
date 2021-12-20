@@ -20,11 +20,12 @@ button {
 }
 
 input {
-    background: darken(map.get(v.$colors, "white"), 10%);
+    background: map.get(v.$colors, "white");
     border: 0;
     border-bottom: 2px solid map.get(v.$colors, "blue");
     padding: 1em;
     width: 100%;
+    margin: 1em;
 }
 
 button {
