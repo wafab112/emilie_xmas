@@ -1,5 +1,5 @@
 # create db container
-# docker-compose -f db-compose.yml up -d
+docker-compose -f db-compose.yml up -d
 
 mkdir -p /opt/emilie_xmas/front/letsencrypt/live/xmas-emilie.de
 mkdir -p /opt/emilie_xmas/front/letsencrypt/archive/xmas-emilie.de
