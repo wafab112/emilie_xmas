@@ -32,7 +32,7 @@ header a.menu__back img {
 }
 header a.menu__back #menu__number {
   display: block;
-  margin-left: 0.25em;
+  margin-left: 0.5em;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
