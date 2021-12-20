@@ -65,7 +65,7 @@ header {
 
     nav {
         display: none;
-        color: map.get(v.$colors, "white")
+        color: map.get(v.$colors, "white");
 
         &.open {
             display: flex;

@@ -1,17 +1,73 @@
-/* Error: Expected digit.
- *    ,
- * 70 |         &.open {
- *    |           ^
- *    '
- *   scss\style.scss 70:11  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected digit.\a    \2577 \a 70 \2502          &.open {\d\a    \2502            ^\a    \2575 \a   scss\\style.scss 70:11  root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@400;900&display=swap");
+* {
+  box-sizing: border-box;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FEFCFB;
+}
+
+header {
+  background: #2C5784;
+  padding: 1em 2em;
+}
+header .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header a.menu__back {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #FEFCFB;
+  text-decoration: none;
+}
+header a.menu__back img {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+header a.menu__back #menu__number {
+  display: block;
+  margin-left: 0.5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+header .menu__open {
+  background: none;
+  border: none;
+  outline: none;
+}
+header nav {
+  display: none;
+  color: #FEFCFB;
+}
+header nav.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */
