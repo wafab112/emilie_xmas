@@ -31,6 +31,8 @@ input {
 button {
     background: map.get(v.$colors, "blue");
     color: map.get(v.$colors, "white");
+    border: 0;
     padding: 1em;
     margin: 0 auto;
+    font-family: "Dancing Script";
 }
