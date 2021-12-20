@@ -14,20 +14,23 @@
 <body>
     <header>
         <div class="menu">
-            <a class="menu__back" href="#">
+            <a class="menu__back" href="overview.html">
+                <img src="img/back-arrow.png" alt="&lt;"/>
+                <span id="menu__number"></span>
             </a>
             <!-- TODO: onclick -->
-            <button class="menu__open">
+            <button class="menu__open" onclick="toggleNav(event)">
+                <svg height="1em" viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0H442V49.1667H0V0Z" fill="#FEFCFB"/>
+                    <path d="M0 122.917H442V172.083H0V122.917Z" fill="#FEFCFB"/>
+                    <path d="M0 245.833H442V295H0V245.833Z" fill="#FEFCFB"/>
+                </svg>
             </button>
         </div>
 
         <nav>
-            <a href="#" class="nav__item">
-                Startseite
-            </a>
-            <a href="overview.html" class="nav__item">
-                Übersicht
-            </a>
+            <a href="#">Startseite</a>
+            <a href="overview.html">Übersicht</a>
         </nav>
     </header>
 
