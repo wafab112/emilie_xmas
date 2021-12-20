@@ -16,6 +16,6 @@ input {
 }
 
 button {
-    background: map.get(v.$colors, "blue"):
+    background: map.get(v.$colors, "blue");
     color: map.get(v.$colors, "white");
 }
