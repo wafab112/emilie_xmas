@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bodyElement.appendChild(textElement);
         var backNumber = document.querySelector("#menu__number");
         if (backNumber !== null && backNumber !== undefined) {
-            backNumber.innerText = entry.day.toString().padStart(3, "0");
+            backNumber.innerText = "#" + entry.day.toString().padStart(3, "0");
         }
     })
         .catch((reason) => {

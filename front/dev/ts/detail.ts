@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () =>
             var backNumber = document.querySelector("#menu__number") as HTMLElement;
             if (backNumber !== null && backNumber !== undefined)
             {
-                backNumber.innerText = entry.day.toString().padStart(3, "0");
+                backNumber.innerText = "#" + entry.day.toString().padStart(3, "0");
             }
 
         })

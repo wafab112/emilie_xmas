@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@400;900&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -33,6 +33,7 @@ header a.menu__back img {
 header a.menu__back #menu__number {
   display: block;
   margin-left: 0.25em;
+  font-weight: 700;
 }
 
 h1 {
