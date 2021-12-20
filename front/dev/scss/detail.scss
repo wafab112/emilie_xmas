@@ -7,18 +7,23 @@
     position: relative;
 
     .base-image {
+        display: block;
+
         width: 100%;
         height: auto;
-        display: block;
     }
 
     .overlay {
-        height: 100px;
-        width: 100%;
-        overflow: hidden;
         position: absolute;
+
+        // overlay 5em = img + p 3em, padding 1em
+        height: 5em;
+        width: 100%;
+
         left: 0;
         bottom: 0;
+
+        overflow: hidden;
 
         a {
             display: flex;
@@ -30,7 +35,7 @@
             width: 100vw;
             height: 100vw;
 
-            padding: .5em;
+            padding: 1em;
 
             border-radius: 50%;
 
