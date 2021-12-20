@@ -3,31 +3,35 @@
 @use "vars" as v;
 @use "mixins" as m;
 
-.base-image {
-    width: 100%;
-    height: auto;
+.heading {
     position: relative;
-    display: block;
-}
 
-.overlay {
-    height: 100px;
-    width: 100%;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    a {
+    .base-image {
+        width: 100%;
+        height: auto;
         display: block;
-        width: 100vw;
-        height: 100vw;
-        border-radius: 50%;
-        background-color: red;
+    }
 
-        img {
-            width: 2em;
-            height: 2em;
+    .overlay {
+        height: 100px;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        a {
+            display: block;
+            width: 100vw;
+            height: 100vw;
+            border-radius: 50%;
+            background-color: red;
+
+            img {
+                width: 2em;
+                height: 2em;
+            }
         }
     }
 }
+

@@ -142,6 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
             image: base64ToBlob(full.image),
             thumbnail: base64ToBlob(full.thumbnail)
         };
+        var headingElement = document.createElement("div");
+        headingElement.classList.add("heading");
         var imageElement = document.createElement("img");
         var overlayElement = document.createElement("div");
         var overlayLink = document.createElement("a");
@@ -160,8 +162,9 @@ document.addEventListener("DOMContentLoaded", () => {
         titleElement.innerText = entry.title;
         subTitleElement.innerText = `#${entry.day.toString().padStart(3, "0")} - ${entry.date.getDate().toString().padStart(2, "0")}.${(entry.date.getMonth() + 1).toString().padStart(2, "0")}.${entry.date.getFullYear().toString()}`;
         textElement.innerText = entry.innerHTML;
-        mainElement.appendChild(imageElement);
-        mainElement.appendChild(overlayElement);
+        mainElement.appendChild(headingElement);
+        headingElement.appendChild(imageElement);
+        headingElement.appendChild(overlayElement);
         overlayElement.appendChild(overlayLink);
         overlayLink.appendChild(overlayImage);
         overlayLink.appendChild(overlayText);

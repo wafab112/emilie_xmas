@@ -1,11 +1,12 @@
-.base-image {
+.heading {
+  position: relative;
+}
+.heading .base-image {
   width: 100%;
   height: auto;
-  position: relative;
   display: block;
 }
-
-.overlay {
+.heading .overlay {
   height: 100px;
   width: 100%;
   overflow: hidden;
@@ -13,14 +14,14 @@
   left: 0;
   top: 0;
 }
-.overlay a {
+.heading .overlay a {
   display: block;
   width: 100vw;
   height: 100vw;
   border-radius: 50%;
   background-color: red;
 }
-.overlay a img {
+.heading .overlay a img {
   width: 2em;
   height: 2em;
 }
