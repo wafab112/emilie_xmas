@@ -21,6 +21,8 @@ body {
 
 header {
     background: map.get(v.$colors, "blue");
+    width: 100vw;
+    height: auto;
     padding: 1em 2em;
     position: fixed;
 
