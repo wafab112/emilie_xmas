@@ -14,12 +14,14 @@ body {
 }
 
 header {
+  background: #2C5784;
+  padding: 1em 2em;
+}
+header .menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: #2C5784;
-  padding: 1em 2em;
 }
 header a.menu__back {
   display: flex;
