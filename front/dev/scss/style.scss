@@ -62,6 +62,17 @@ header {
         border: none;
         outline: none;
     }
+
+    nav {
+        display: none;
+
+        &.open {
+            display: flex;
+
+            flex-direction: row;
+            align-items: center;
+        }
+    }
 }
 
 h1 {

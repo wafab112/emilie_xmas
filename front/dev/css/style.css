@@ -47,6 +47,14 @@ header .menu__open {
   border: none;
   outline: none;
 }
+header nav {
+  display: none;
+}
+header nav.open {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 h1 {
   font-family: "Dancing Script", cursive;
