@@ -40,17 +40,22 @@ main {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto-fill, auto);
 
+    gap: .5em .5em;
+
     width: 100%;
 
     padding: 2em;
 }
 
 .card {
-    margin: .5em;
     background: map.get(v.$colors, "white");
     width: 100%;
 
     .card__text {
         color: map.get(v.$colors, "red");
+    }
+    
+    .card__image {
+        width: 100%;
     }
 }
