@@ -22,4 +22,20 @@
   right: 0.5em;
 }
 
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fill, auto);
+  width: 100%;
+  padding: 2em;
+}
+
+.card {
+  margin: 0.5em;
+  background: #FEFCFB;
+}
+.card .card__text {
+  color: #800032;
+}
+
 /*# sourceMappingURL=overview.css.map */
