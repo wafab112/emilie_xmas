@@ -64,6 +64,7 @@
         width: 49%;
         padding: .5em 0;
         margin: 0;
+        color: black;
     }
     
     .toggler-active {
@@ -95,6 +96,8 @@ main {
         3.6px 3.6px 17.9px rgba(0, 0, 0, 0.042),
         6.7px 6.7px 33.4px rgba(0, 0, 0, 0.05),
         16px 16px 80px rgba(0, 0, 0, 0.07);
+
+    text-decoration: none;
 
     .card__text {
         color: map.get(v.$colors, "red");
