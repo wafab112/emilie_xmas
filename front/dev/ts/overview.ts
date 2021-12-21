@@ -17,13 +17,13 @@ function toggleWeek(event: Event)
     let togglerMonth = document.querySelector("#toggler-month");
     if (isWeek)
     {
-        togglerWeek.classList.add("toggler__active");
-        togglerMonth.classList.remove("toggler__active");
+        togglerWeek.classList.add("toggler-active");
+        togglerMonth.classList.remove("toggler-active");
     }
     else
     {
-        togglerMonth.classList.add("toggler__active");
-        togglerWeek.classList.remove("toggler__active");
+        togglerMonth.classList.add("toggler-active");
+        togglerWeek.classList.remove("toggler-active");
     }
     
     loadData();
