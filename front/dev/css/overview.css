@@ -2,10 +2,9 @@
   position: absolute;
   top: 50%;
   padding: 1em;
-  background-color: #2C5784;
+  background: none;
   color: #FEFCFB;
   border: none;
-  border-radius: 50%;
 }
 .arrow img {
   width: 1em;

@@ -12,11 +12,10 @@
 
     //transform: translate(-50%, -50%);
 
-    background-color: map.get(v.$colors, "blue");
+    background: none; 
     color: map.get(v.$colors, "white");
 
     border: none;
-    border-radius: 50%;
 
     img {
         width: 1em;
