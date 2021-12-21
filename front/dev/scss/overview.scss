@@ -44,15 +44,30 @@ main {
 
     width: 100%;
 
-    padding: 2em;
+    padding: 2.5em;
 }
 
 .card {
     background: map.get(v.$colors, "white");
     width: 100%;
+    padding: .5em;
+    box-shadow:
+        0.4px 0.4px 2.2px rgba(0, 0, 0, 0.02),
+        1.1px 1.1px 5.3px rgba(0, 0, 0, 0.028),
+        2px 2px 10px rgba(0, 0, 0, 0.035),
+        3.6px 3.6px 17.9px rgba(0, 0, 0, 0.042),
+        6.7px 6.7px 33.4px rgba(0, 0, 0, 0.05),
+        16px 16px 80px rgba(0, 0, 0, 0.07);
 
     .card__text {
         color: map.get(v.$colors, "red");
+        text-align: center;
+        text-decoration: none;
+
+        &:active,
+        &:visited {
+            color: map.get(v.$colors, "red");
+        }
     }
     
     .card__image {
