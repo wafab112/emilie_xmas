@@ -32,8 +32,8 @@
   border-radius: 50%;
 }
 .toggler p {
-  display: block;
-  width: 50%;
+  display: inline-block;
+  width: 40%;
 }
 .toggler .toggler-active {
   background-color: #FEFCFB;
