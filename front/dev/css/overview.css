@@ -13,14 +13,14 @@
 }
 
 .arrow--left {
-  left: 2em;
+  left: 0.5em;
 }
 .arrow--left img {
   transform: rotate(180deg);
 }
 
 .arrow--right {
-  right: 2em;
+  right: 0.5em;
 }
 
 /*# sourceMappingURL=overview.css.map */
