@@ -2,7 +2,6 @@
   position: absolute;
   top: 50%;
   padding: 1em;
-  margin: 0 1.5em;
   transform: translate(-50%, -50%);
   background-color: #2C5784;
   color: #FEFCFB;
@@ -15,14 +14,14 @@
 }
 
 .arrow--left {
-  left: 0;
+  left: 2em;
 }
 .arrow--left img {
-  transform: rotate("180deg");
+  transform: rotate(180deg);
 }
 
 .arrow--right {
-  right: 0;
+  right: 2em;
 }
 
 /*# sourceMappingURL=overview.css.map */
