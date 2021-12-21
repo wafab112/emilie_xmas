@@ -48,6 +48,7 @@ main {
 .card {
     margin: .5em;
     background: map.get(v.$colors, "white");
+    width: 100%;
 
     .card__text {
         color: map.get(v.$colors, "red");

@@ -33,6 +33,7 @@ main {
 .card {
   margin: 0.5em;
   background: #FEFCFB;
+  width: 100%;
 }
 .card .card__text {
   color: #800032;
