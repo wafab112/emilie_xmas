@@ -9,9 +9,16 @@
   border: none;
   border-radius: 50%;
 }
+.arrow img {
+  width: 1em;
+  height: 1em;
+}
 
 .arrow--left {
   left: 0;
+}
+.arrow--left img {
+  transform: rotate("180deg");
 }
 
 .arrow--rigth {
