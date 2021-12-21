@@ -1,0 +1,21 @@
+.arrow {
+  position: absolute;
+  top: 50%;
+  padding: 1em;
+  margin: 0.5em;
+  transform: translate(-50%, -50%);
+  background-color: #2C5784;
+  color: #FEFCFB;
+  border: none;
+  border-radius: 50%;
+}
+
+.arrow--left {
+  left: 0;
+}
+
+.arrow--rigth {
+  right: 0;
+}
+
+/*# sourceMappingURL=overview.css.map */

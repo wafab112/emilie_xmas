@@ -1,0 +1,29 @@
+@use "sass:map" as map;
+
+@use "vars" as v;
+@use "mixins" as m;
+
+.arrow {
+    position: absolute;
+
+    top: 50%;
+
+    padding: 1em;
+    margin: .5em;
+
+    transform: translate(-50%, -50%);
+
+    background-color: map.get(v.$colors, "blue");
+    color: map.get(v.$colors, "white");
+
+    border: none;
+    border-radius: 50%;
+}
+
+.arrow--left {
+    left: 0;
+}
+
+.arrow--rigth {
+    right: 0;
+}
