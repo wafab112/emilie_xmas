@@ -35,6 +35,7 @@ function loadData() {
     var mainDiv = document.querySelector("main");
     fetchArray(authToken, current, isWeek, loadingToggle)
         .then((dtos) => {
+        mainDiv.innerHTML = "";
         dtos.forEach((dto, index) => {
             let entry = {
                 day: dto.day,

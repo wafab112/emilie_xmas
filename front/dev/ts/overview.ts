@@ -35,6 +35,7 @@ function loadData()
     fetchArray(authToken, current, isWeek, loadingToggle)
     .then((dtos: [ThumbEntryDto]) =>
     {
+        mainDiv.innerHTML = "";
         dtos.forEach((dto: ThumbEntryDto, index: number) =>
         {
             let entry: ThumbEntry = {
