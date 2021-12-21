@@ -1,56 +1,17 @@
-.arrow {
-  position: absolute;
-  top: 50%;
-  background: none;
-  color: #FEFCFB;
-  border: none;
-}
-.arrow img {
-  width: 1.5em;
-  height: 1.5em;
-  overflow: hidden;
-}
+/* Error: expected ";".
+ *    ,
+ * 53 |     overflow: hidden:
+ *    |                     ^
+ *    '
+ *   scss\overview.scss 53:21  root stylesheet */
 
-.arrow--left {
-  left: 0.5em;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected ";".\a    \2577 \a 53 \2502      overflow: hidden:\d\a    \2502                      ^\a    \2575 \a   scss\\overview.scss 53:21  root stylesheet';
 }
-.arrow--left img {
-  transform: rotate(180deg);
-}
-
-.arrow--right {
-  right: 0.5em;
-}
-
-.toggler {
-  margin: 5em auto;
-}
-
-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(auto-fill, auto);
-  gap: 0.5em 0.5em;
-  width: 100%;
-  padding: 2.5em;
-}
-
-.card {
-  background: #FEFCFB;
-  width: 100%;
-  padding: 0.5em;
-  box-shadow: 0.4px 0.4px 2.2px rgba(0, 0, 0, 0.02), 1.1px 1.1px 5.3px rgba(0, 0, 0, 0.028), 2px 2px 10px rgba(0, 0, 0, 0.035), 3.6px 3.6px 17.9px rgba(0, 0, 0, 0.042), 6.7px 6.7px 33.4px rgba(0, 0, 0, 0.05), 16px 16px 80px rgba(0, 0, 0, 0.07);
-}
-.card .card__text {
-  color: #800032;
-  text-align: center;
-  text-decoration: none;
-}
-.card .card__text:active, .card .card__text:visited {
-  color: #800032;
-}
-.card .card__image {
-  width: 100%;
-}
-
-/*# sourceMappingURL=overview.css.map */
