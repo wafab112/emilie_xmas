@@ -54,8 +54,12 @@
     border-radius: 50%;
 
     p {
-        display: inline-block;
+        display: block;
         width: 50%;
+    }
+    
+    .toggler-active {
+        background-color: map.get(v.$colors, "white");
     }
 }
 
